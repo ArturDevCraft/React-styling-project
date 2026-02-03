@@ -1,53 +1,155 @@
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+### 🔥 Chcesz stworzyć własne repozytorium z projektem na podstawie repozytorium sforkowanego (np. oryginalnego repozytorium z zadaniem)? Zobacz, [jak to zrobić](https://github.com/devmentor-pl/from-fork-to-own-repo).
+
+### 💥 Nie wiesz, jak zabrać się do pisania? Przeczytaj [artykuł o tworzeniu README do projektu](https://devmentor.pl/b/jak-napisac-readme-do-projektu-na-githubie)!
 
 &nbsp;
 
+---
 
-# Neumorfizm
+# SEKCJA NOTATEK - usuń po napisaniu README :)
 
-Neumorfizm to pewien trend w projektowaniu, który opiera się na odpowiednim wykorzystaniu cieni.
+### funkcjonalności programu
 
-W tym projekcie Twoim zadaniem będzie utworzenie z pomocą Styled Components kilku komponentów zgodnych z tym trendem.
+-
 
-Formularz powinien być rozbudowany, lecz to od Ciebie zależy, jakie elementy w nim zawrzesz.
+### problemy i ich rozwiązania + fragmenty kodu
 
-Zanim przejdziesz do implementowania, zapoznaj się z kilkoma artykułami na temat neumorfizmu:
-- [Neumorphism in user interfaces](https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6) (jeśli wykorzystałeś darmowy limit, to wystarczy otworzyć tę stronę w trybie incognito)
-- [Neumorphism: why it’s all the hype in UI design](https://www.justinmind.com/blog/neumorphism-ui/)
-- [Neumorphism. The Next Big Thing In UI Design?](https://opengeekslab.com/blog/neumorphism-the-next-big-thing-ui-design/)
+- `fragment kodu`
 
-## Komponenty
+```
+większy fragment kodu
+```
 
-Gdy zdecydujesz, z czego ma się składać Twój formularz, stwórz odpowiednie komponenty: pola tekstowe, listy rozwijane, checkboxy, buttony, paski postępu itd. Możesz skorzystać z podpowiedzi z punktu poniżej (Formularz).
+### materiały, które pomogły Ci uzyskać dany efekt
 
-Po zapoznaniu się z podlinkowanymi artykułami wiesz już, na czym polega neumorfizm. Jeśli potrzebujesz dodatkowych wskazówek, to zachęcam Cię do skorzystania z [generatora kodu CSS](https://neumorphism.io/). Możesz również inspirować się [przykładami innych](https://bashooka.com/inspiration/neumorphism-ui-design-examples/).
+-
 
-Jeśli masz własną koncepcję komponentów, to nie widzę przeszkód, abyś z niej skorzystał. Jeśli nie, to możesz się wzorować na poniższej grafice od [Emy Lascan (MazePixel)](https://uibundle.com/products/428-freebie-neumorphic-ux-ui-elements).
+### reużywalne części projektu
 
-![](./example.png)
+-
 
-## Formularz
+### narzędzia, frameworki, biblioteki
 
-Kiedy będziesz mieć gotowe komponenty, zacznij budować swój formularz.
+-
 
-Pamiętaj, aby w pełni prezentował on Twoje możliwości, np.:
-- składał się z trzech etapów (kroków, ekranów), po których można wygodnie się przemieszczać
-- posiadał rozwijaną listę implementowaną przez specjalne rozwiązanie, inne niż `select`
-- miał animowane elementy typu `chceckbox` czy `radio`
-- poziom wypełnienia pól prezentował przez pasek postępu
-- informował użytkownika od razu po wprowadzeniu błędnych danych.
+### niezbędne paczki i komendy do uruchomienia projektu
 
+-
 
-Jestem pewny, że ten projekt mocno zainteresuje Twojego przyszłego pracodawcę!
+### wtyczki – rozszerzenia do przeglądarki czy do IDE
 
+-
 
-PS Konfigurację środowiska zrób według własnego uznania.
+### inspiracje
 
+-
+
+### wnioski, pomysły na rozwój projektu
+
+-
 
 &nbsp;
 
-> ⭐ ***README** to coś więcej niż opis. Poprzez nie **pokazujesz swoje mocne strony** – swoją dokładność, sposób myślenia i podejście do rozwiązywania problemów. Niech Twoje README pokaże, że masz **świetne predyspozycje do rozwoju!***
-> 
-> 🎁 *Zacznij od razu. Skorzystaj z **[szablonu README i wskazówek](https://github.com/devmentor-pl/readme-template)**.* 
+## _`Koniec sekcji notatek. Poniżej znajdziesz szablon właściwego README.`_
+
+---
+
+![screen or GIF of your app](https://via.placeholder.com/1000x300)
+
+# Project Name
+
+See the live version of [Project Name](https://devmentor.pl).
+
+1-3 sentences about the project...
+
+**Main features**:
+
+- one
+- two
+- three
+
+&nbsp;
+
+## 💡 Technologies
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
+&nbsp;
+
+## 🔗 See also
+
+Are you interested in **techonologyName** and **technologyName**? See my other project [Interesting Project Name](https://devmentor.pl/podcast).
+
+&nbsp;
+
+## 💿 Installation
+
+The project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). Having them installed, type into the terminal: `npm i`.
+
+To run: `npm run dev`
+&nbsp;
+
+## 🤔 Solutions provided in the project
+
+- one
+
+&nbsp;
+
+- two:
+
+```
+some example code
+
+more code :)
+```
+
+&nbsp;
+
+- three
+
+| Issue | Solution             |     |
+| ----- | -------------------- | --- |
+| one   | `short code example` |     |
+| two   | `short code example` |     |
+| thre  | `short code example` |     |
+
+&nbsp;
+
+- four - some shortcut <kbd>Ctrl</kbd> + <kbd>C</kbd>
+
+&nbsp;
+
+- five - example with a screenshot
+  <img alt='what it is' src="https://via.placeholder.com/500x200" />
+
+&nbsp;
+
+## 💭 Conclusions for future projects
+
+I would like to improve...
+
+#### This is the first issue:
+
+```
+and this is a code example
+```
+
+#### This is the second issue:
+
+```
+and this is a code example
+```
+
+&nbsp;
+
+## 🙋‍♂️ Feel free to contact me
+
+Write sth nice ;) Find me on...
+
+&nbsp;
+
+## 👏 Thanks / Special thanks / Credits
+
+Thanks to my [Mentor - devmentor.pl](https://devmentor.pl/) – for providing me with this task and for code review.
