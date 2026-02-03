@@ -1,4 +1,4 @@
-// generate dynamically object witch color values and shadows for each theme color usegetheme.color.text
+// generate dynamically object witch color values and shadows for each theme color usege: theme.warm.color.text; theme.light.shadow.big.flat
 import colors from './colors';
 
 import { shadows } from './shadows';
