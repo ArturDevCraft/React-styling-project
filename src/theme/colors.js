@@ -2,11 +2,11 @@ export const colors = [
 	{
 		name: 'dark',
 		colors: {
-			accent: '#6d5dfc',
-			background: '#e0e5ec',
-			text: '#444444',
-			shadowLight: '#ffffff',
-			shadowDark: '#a3b1c6',
+			accent: '#6d5dfc', // Powrót do Twojego oryginału lub #8b80ff
+			background: '#282c34', // Jaśniejszy antracyt - daje "miejsce" na cienie
+			text: '#e0e5ec', // Jasny tekst dla kontrastu
+			shadowLight: '#323741', // Wyraźnie jaśniejszy od tła
+			shadowDark: '#1e2127',
 		},
 	},
 
