@@ -10,10 +10,11 @@ const styles = {
 };
 
 const sizes = {
+	verySmall: 3,
 	small: 5,
 	medium: 7,
 	big: 9,
-	verybig: 20,
+	veryBig: 20,
 };
 
 export const shadows = (colorLight, colorDark) =>

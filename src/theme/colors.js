@@ -15,7 +15,7 @@ export const colors = [
 		colors: {
 			accent: '#6d5dfc',
 			background: '#e0e5ec',
-			text: '#444444',
+			text: '#686868',
 			shadowLight: '#ffffff',
 			shadowDark: '#a3b1c6',
 		},
