@@ -15,6 +15,7 @@ const sizes = {
 	medium: 7,
 	big: 9,
 	veryBig: 20,
+	veryverbig: 30,
 };
 
 export const shadows = (colorLight, colorDark) =>
@@ -28,3 +29,4 @@ export const shadows = (colorLight, colorDark) =>
 		}),
 		{},
 	);
+

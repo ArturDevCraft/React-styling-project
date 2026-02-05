@@ -27,6 +27,20 @@ function App() {
 			<GlobalStyle theme={theme[currentTheme]} />
 			<ThemeProvider theme={theme[currentTheme]}>
 				<Button onClick={toggleTcheme}>Toggle theme</Button>
+				<Button type="small">Small</Button>
+				<Button type="big" shape="square" width="2">
+					BIG Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+					quibusdam.
+				</Button>
+				<Button shape="square" type="small">
+					Button squared small
+				</Button>
+				<Button shape="round" type="small" width="">
+					Button squared small
+				</Button>
+			</ThemeProvider>
+			<ThemeProvider theme={theme['dark']}>
+				<Button onClick={toggleTcheme}>Toggle theme</Button>
 			</ThemeProvider>
 		</>
 	);
