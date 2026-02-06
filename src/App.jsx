@@ -5,7 +5,11 @@ import theme from './theme';
 import { useState } from 'react';
 
 const GlobalStyle = createGlobalStyle`
+html{
+  font-size: 62.5%;
+}
   body{
+    font-size: 1.6rem;
     background-color: ${({ theme }) => theme.color.background};
   }
 `;
@@ -26,21 +30,51 @@ function App() {
 		<>
 			<GlobalStyle theme={theme[currentTheme]} />
 			<ThemeProvider theme={theme[currentTheme]}>
-				<Button onClick={toggleTcheme}>Toggle theme</Button>
-				<Button type="small">Small</Button>
-				<Button type="big" shape="square" width="2">
-					BIG Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-					quibusdam.
+				<Button onClick={toggleTcheme} size="small">
+					Toggle theme
 				</Button>
-				<Button shape="square" type="small">
-					Button squared small
+				<Button onClick={toggleTcheme} size="medium">
+					Toggle theme
 				</Button>
-				<Button shape="round" type="small" width="">
-					Button squared small
+				<Button onClick={toggleTcheme} size="big">
+					Toggle theme
 				</Button>
-			</ThemeProvider>
-			<ThemeProvider theme={theme['dark']}>
-				<Button onClick={toggleTcheme}>Toggle theme</Button>
+
+				<Button onClick={toggleTcheme} size="small">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} width="0.45">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="medium" width="0.45">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="big" width="0.45">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="big" width="0.45">
+					Toggle theme
+				</Button>
+
+				<Button onClick={toggleTcheme} size="small" shape="square">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="medium" shape="square">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="big" shape="square">
+					Toggle theme
+				</Button>
+
+				<Button onClick={toggleTcheme} size="small" shape="round" width="1">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="medium" shape="round">
+					Toggle theme
+				</Button>
+				<Button onClick={toggleTcheme} size="big" shape="round">
+					Toggle theme
+				</Button>
 			</ThemeProvider>
 		</>
 	);

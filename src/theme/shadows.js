@@ -1,21 +1,20 @@
 //generate  shadow css property for given colors and all sizes configured in sizes object
 const styles = {
 	light: (colorLight, colorDark, size = 5) =>
-		`${size}px ${size}px ${size * 2}px ${colorDark}, 
-    -${size}px -${size}px ${size * 2}px ${colorLight}`,
+		`${size}px ${size}px ${size * 2.2}px ${colorDark}, 
+    -${size}px -${size}px ${size * 2.2}px ${colorLight}`,
 
 	inset: (colorLight, colorDark, size = 5) =>
-		`inset -${size}px -${size}px ${size * 2}px ${colorLight},
-    inset ${size}px ${size}px ${size * 2}px ${colorDark}`,
+		`inset -${size}px -${size}px ${size * 2.2}px ${colorLight},
+    inset ${size}px ${size}px ${size * 2.2}px ${colorDark}`,
 };
 
 const sizes = {
-	verySmall: 3,
-	small: 5,
-	medium: 7,
-	big: 9,
-	veryBig: 20,
-	veryverbig: 30,
+	verySmall: 2,
+	small: 3,
+	medium: 5,
+	big: 7,
+	veryBig: 10,
 };
 
 export const shadows = (colorLight, colorDark) =>
@@ -29,4 +28,3 @@ export const shadows = (colorLight, colorDark) =>
 		}),
 		{},
 	);
-

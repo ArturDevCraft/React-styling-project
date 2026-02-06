@@ -3,7 +3,7 @@ import StyledButton from './Button.styled';
 export default function Button({
 	children,
 	onClick,
-	type,
+	size,
 	width,
 	style,
 	shape,
@@ -11,7 +11,7 @@ export default function Button({
 	return (
 		<StyledButton
 			onClick={onClick}
-			type={type}
+			size={size}
 			width={width}
 			style={style}
 			shape={shape}

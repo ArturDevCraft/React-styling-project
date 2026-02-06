@@ -3,32 +3,32 @@ export const colors = [
 		name: 'dark',
 		colors: {
 			accent: '#6d5dfc', // Powrót do Twojego oryginału lub #8b80ff
-			background: '#282c34', // Jaśniejszy antracyt - daje "miejsce" na cienie
+			background: '#2f333d', // Jaśniejszy antracyt - daje "miejsce" na cienie
 			text: '#e0e5ec', // Jasny tekst dla kontrastu
-			shadowLight: '#323741', // Wyraźnie jaśniejszy od tła
-			shadowDark: '#1e2127',
+			shadowLight: '#3c424c', // Wyraźnie jaśniejszy od tła
+			shadowDark: '#20242e',
 		},
 	},
 
 	{
 		name: 'light',
 		colors: {
-			accent: '#6d5dfc',
-			background: '#e0e5ec',
+			accent: '#0088ff',
+			background: '#e6e6e6',
 			text: '#686868',
 			shadowLight: '#ffffff',
-			shadowDark: '#a3b1c6',
+			shadowDark: '#939699',
 		},
 	},
 
 	{
 		name: 'warm',
 		colors: {
-			accent: '#e88a64',
-			background: '#f4ead5',
+			accent: '#ea7243',
+			background: '#f4e7d5',
 			text: '#5b4636',
-			shadowLight: '#fff9ed',
-			shadowDark: '#d6ccb5',
+			shadowLight: '#fffded',
+			shadowDark: '#c1b7a7',
 		},
 	},
 ];
