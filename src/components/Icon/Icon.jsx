@@ -1,6 +1,12 @@
 import { useEffect } from 'react';
+import styled from 'styled-components';
+
 const FONT_AWESOME_KIT_URL = 'https://kit.fontawesome.com/4704e1b632.js';
 const SCRIPT_ID = 'font-awesome-kit-script';
+
+const StyledI = styled.i`
+	${({ style }) => style}
+`;
 
 export default function Icon({ type, variant = 'solid', style }) {
 	const iconVariants = { solid: 'fa-solid', regular: 'fa-regular' };
@@ -19,7 +25,9 @@ export default function Icon({ type, variant = 'solid', style }) {
 		arrowRight: 'fa-angle-right', //solid
 		arrowUp: 'fa-angle-up', //solid
 		arrowLeft: 'fa-angle-left', //solid
+		brush: 'fa-brush', //solid
 	};
+
 	useEffect(() => {
 		const fontAwesomeScriptExists = document.getElementById(SCRIPT_ID);
 		if (fontAwesomeScriptExists) {
@@ -32,7 +40,7 @@ export default function Icon({ type, variant = 'solid', style }) {
 		document.head.appendChild(script);
 	}, []);
 	return (
-		<i
+		<StyledI
 			style={style}
 			className={iconVariants[variant] + ' ' + iconTypes[type]}
 		/>
