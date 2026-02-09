@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { ThemeProvider } from 'styled-components';
-import Button from './components/Button/Button';
+import Button from './components/Button';
+import Input from './components/Input';
 import theme from './theme';
 import { useState } from 'react';
 
@@ -39,7 +40,6 @@ function App() {
 				<Button onClick={toggleTcheme} size="big">
 					Toggle theme
 				</Button>
-
 				<Button onClick={toggleTcheme} size="small">
 					Toggle theme
 				</Button>
@@ -55,7 +55,6 @@ function App() {
 				<Button onClick={toggleTcheme} size="big" width="0.45">
 					Toggle theme
 				</Button>
-
 				<Button onClick={toggleTcheme} size="small" shape="square">
 					Toggle theme
 				</Button>
@@ -65,7 +64,6 @@ function App() {
 				<Button onClick={toggleTcheme} size="big" shape="square">
 					Toggle theme
 				</Button>
-
 				<Button onClick={toggleTcheme} size="small" shape="round" width="1">
 					Toggle theme
 				</Button>
@@ -75,6 +73,77 @@ function App() {
 				<Button onClick={toggleTcheme} size="big" shape="round">
 					Toggle theme
 				</Button>
+
+				{/* INPUTS */}
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="small"
+					type="text"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="medium"
+				/>
+				<Input onClick={toggleTcheme} placeholder="Type text..." size="big" />
+				<Input onClick={toggleTcheme} placeholder="Type text..." size="small" />
+				<Input onClick={toggleTcheme} placeholder="Type text..." width="0.45" />
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="medium"
+					width="0.45"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="big"
+					width="0.45"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="big"
+					width="0.45"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="small"
+					shape="square"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="medium"
+					shape="square"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="big"
+					shape="square"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="small"
+					shape="round"
+					width="1"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="medium"
+					shape="round"
+				/>
+				<Input
+					onClick={toggleTcheme}
+					placeholder="Type text..."
+					size="big"
+					shape="round"
+				/>
 			</ThemeProvider>
 		</>
 	);
