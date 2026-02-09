@@ -4,6 +4,7 @@ import Button from './components/Button';
 import Input from './components/Input';
 import theme from './theme';
 import { useState } from 'react';
+import Icon from './components/Icon/Icon';
 
 const GlobalStyle = createGlobalStyle`
 html{
@@ -11,6 +12,7 @@ html{
 }
   body{
     font-size: 1.6rem;
+    color: ${({ theme }) => theme.color.text};
     background-color: ${({ theme }) => theme.color.background};
   }
 `;
@@ -144,6 +146,26 @@ function App() {
 					size="big"
 					shape="round"
 				/>
+
+				<Icon type="search" />
+				<Icon type="user" />
+				<Icon type="user" variant="regular" />
+				<Icon type="userPlus" />
+				<Icon type="share" />
+				<Icon type="plus" />
+				<Icon type="comment" />
+				<Icon type="comment" variant="regular" />
+				<Icon type="envelope" />
+				<Icon type="envelope" variant="regular" />
+				<Icon type="send" />
+				<Icon type="send" variant="regular" />
+				<Icon type="save" />
+				<Icon type="save" variant="regular" />
+				<Icon type="location" />
+				<Icon type="arrowDown" />
+				<Icon type="arrowRight" />
+				<Icon type="arrowUp" />
+				<Icon type="arrowLeft" />
 			</ThemeProvider>
 		</>
 	);
