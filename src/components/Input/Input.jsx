@@ -1,4 +1,5 @@
 import StyledInput from './Input.styled';
+import StyledInputWrapper from './InputWrapper.styled';
 
 export default function Input({
 	children,
@@ -11,16 +12,15 @@ export default function Input({
 }) {
 	const tag = shape === 'square' ? 'textarea' : 'input';
 	return (
-		<StyledInput
-			as={tag}
+		<StyledInputWrapper
 			onClick={onClick}
 			size={size}
 			width={width}
 			style={style}
 			shape={shape}
-			placeholder={placeholder}
 		>
 			{children}
-		</StyledInput>
+			<StyledInput as={tag} placeholder={placeholder} />
+		</StyledInputWrapper>
 	);
 }
