@@ -73,6 +73,8 @@ function App() {
 					Toggle theme
 				</Button>
 				<Button onClick={toggleTcheme} size="big" shape="round">
+					<Icon type="brush" />
+					<br />
 					Toggle theme
 				</Button>
 
@@ -88,7 +90,9 @@ function App() {
 					placeholder="Type text..."
 					size="medium"
 				/>
-				<Input onClick={toggleTcheme} placeholder="Type text..." size="big" />
+				<Input onClick={toggleTcheme} placeholder="Type text..." size="big">
+					<Icon type="search" />
+				</Input>
 				<Input onClick={toggleTcheme} placeholder="Type text..." size="small" />
 				<Input onClick={toggleTcheme} placeholder="Type text..." width="0.45" />
 				<Input
@@ -126,7 +130,9 @@ function App() {
 					placeholder="Type text..."
 					size="big"
 					shape="square"
-				/>
+				>
+					<Icon type="search" />
+				</Input>
 				<Input
 					onClick={toggleTcheme}
 					placeholder="Type text..."
