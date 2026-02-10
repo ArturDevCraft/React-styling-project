@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const StyledInput = styled.input`
 	background: transparent;
 	border: none;
-	color: inherit;
 	font-family: inherit;
 	font-weight: inherit;
 	margin: 0;

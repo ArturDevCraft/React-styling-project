@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import StyledInput from './Input.styled';
 
 const variant = {
 	small: {
@@ -31,6 +32,14 @@ const StyledInputWrapper = styled.div`
 	border-radius: 2em;
 	border: none;
 	color: ${({ theme }) => theme.color?.text || '#302f2f'};
+	${StyledInput},${StyledInput}::placeholder {
+		color: ${({ theme }) => theme.color?.text || '#302f2f'};
+		transition: color 0.3s ease;
+	}
+	${StyledInput}::placeholder {
+		font-weight: 300;
+	}
+
 	display: inline-flex;
 	font-weight: 400;
 	margin: 1rem;
@@ -42,23 +51,52 @@ const StyledInputWrapper = styled.div`
 		box-shadow 0.3s ease,
 		scale 0.3s ease-out;
 	white-space: nowrap;
-	&:hover {
+	vertical-align: middle;
+	&:hover,
+	&:hover ${StyledInput}::placeholder, &:hover ${StyledInput} {
 		/* box-shadow: ${({ theme }) => theme.shadow?.veryBig.flat}; */
 		color: ${({ theme }) => theme.color?.accent};
 	}
-	&:focus {
-		box-shadow: ${({ theme }) => `${theme.shadow?.medium.flat},
-			${theme.shadow?.small.pressed}`};
-		color: ${({ theme }) => theme.color?.accent};
-		outline: none;
-		scale: 1.2;
-	}
+	${({ type }) =>
+		type !== 'radio' &&
+		`
+		&:has(${StyledInput}:focus) {
+			box-shadow: ${({ theme }) => `${theme.shadow?.medium.flat},
+				${theme.shadow?.small.pressed}`};
+			color: ${({ theme }) => theme.color?.accent};
+			outline: none;
+			scale: 1.2;`}}
+
+	
 
 	${({ size }) => variant?.[size] ?? variant.medium}
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
 		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+	${({ type, theme, checked }) =>
+		type === 'radio' &&
+		`
+		width: auto; padding: 0.9em; 
+		box-shadow: ${theme.shadow?.medium.flat};
+		${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
+
+		${StyledInput} { 
+		appearance:none;
+		background-color: ${theme.color?.background || '#adadad'};
+		width: 1em;
+		height:1em;
+		display: grid;
+  		place-content: center;
+  		cursor: pointer;
+		border: 2px solid ${theme.color?.text || '#302f2f'};
+		border-radius: 50%;
+			&:checked {
+				background-color: ${theme.color?.text || '#302f2f'};
+			}
+			
+		}
+	`}
 	${({ style }) => style}
 `;
 

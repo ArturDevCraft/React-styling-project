@@ -80,11 +80,29 @@ function App() {
 
 				{/* INPUTS */}
 				<Input
-					onClick={toggleTcheme}
+					name="test"
 					placeholder="Type text..."
 					size="small"
+					label="aa"
 					type="text"
+					shape="square"
+				/>
+				<Input
+					name="test"
+					placeholder="Type text..."
+					size="small"
 					value="aa"
+					label="aa"
+					type="radio"
+					checked={true}
+				/>
+				<Input
+					name="test"
+					placeholder="Type text..."
+					size="small"
+					value="aa"
+					label="aa"
+					type="radio"
 				/>
 				<Input
 					onClick={toggleTcheme}
@@ -125,6 +143,7 @@ function App() {
 					placeholder="Type text..."
 					size="medium"
 					shape="square"
+					type="text"
 				/>
 				<Input
 					onClick={toggleTcheme}

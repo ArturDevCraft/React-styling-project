@@ -12,8 +12,13 @@ export default function Input({
 	style,
 	shape,
 	placeholder,
+	type,
+	checked,
 }) {
-	const tag = shape === 'square' ? 'textarea' : 'input';
+	const tag =
+		(type === 'text' || type === undefined) && shape === 'square'
+			? 'textarea'
+			: 'input';
 	return (
 		<StyledInputWrapper
 			size={size}
@@ -21,6 +26,8 @@ export default function Input({
 			style={style}
 			shape={shape}
 			onClick={onClick}
+			checked={checked}
+			type={type}
 		>
 			{children}
 			<StyledInput
@@ -29,6 +36,8 @@ export default function Input({
 				placeholder={placeholder}
 				onChange={onChange}
 				value={value}
+				type={type}
+				checked={checked}
 			/>
 		</StyledInputWrapper>
 	);
