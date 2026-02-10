@@ -84,6 +84,7 @@ function App() {
 					placeholder="Type text..."
 					size="small"
 					type="text"
+					value="aa"
 				/>
 				<Input
 					onClick={toggleTcheme}
