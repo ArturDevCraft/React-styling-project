@@ -85,7 +85,6 @@ function App() {
 					size="small"
 					label="aa"
 					type="text"
-					shape="square"
 				/>
 				<Input
 					name="test"
@@ -102,6 +101,14 @@ function App() {
 					value="aa"
 					label="aa"
 					type="radio"
+				/>
+				<Input
+					name="check"
+					placeholder="Text"
+					size="small"
+					value="aa"
+					label="aa"
+					type="checkbox"
 				/>
 				<Input
 					onClick={toggleTcheme}

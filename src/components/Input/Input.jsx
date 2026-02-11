@@ -1,4 +1,5 @@
 import StyledInput from './Input.styled';
+import StyledLabel from './label.styled';
 import StyledInputWrapper from './InputWrapper.styled';
 
 export default function Input({
@@ -14,12 +15,14 @@ export default function Input({
 	placeholder,
 	type,
 	checked,
+	label,
 }) {
 	const tag =
 		(type === 'text' || type === undefined) && shape === 'square'
 			? 'textarea'
 			: 'input';
-	return (
+
+	const content = (
 		<StyledInputWrapper
 			size={size}
 			width={width}
@@ -32,6 +35,7 @@ export default function Input({
 			{children}
 			<StyledInput
 				as={tag}
+				id="name"
 				name={name}
 				placeholder={placeholder}
 				onChange={onChange}
@@ -40,5 +44,14 @@ export default function Input({
 				checked={checked}
 			/>
 		</StyledInputWrapper>
+	);
+	return label ? (
+		<StyledLabel htmlFor="name">
+			{type === 'checkbox' || type === 'radio'
+				? [content, label]
+				: [label, ':', content]}
+		</StyledLabel>
+	) : (
+		content
 	);
 }
