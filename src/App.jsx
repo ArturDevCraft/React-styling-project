@@ -110,6 +110,7 @@ function App() {
 					label="aa"
 					type="checkbox"
 				/>
+        
 				<Input
 					onClick={toggleTcheme}
 					placeholder="Type text..."
