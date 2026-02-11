@@ -10,7 +10,18 @@
 
 ### funkcjonalności programu
 
--
+- interaktywne komponenty reagujące na kliknięcie focus, aktywność, obsługują ikony i zdarzenia, możliwość nadpisania stylów, posiadają do wyboró kilka wariantów np small, medium, big.
+- komponent input - uniwersalny, obsługa różnych typów dynamicznie dostosowuje styl zależnie od typu. (aby dodać ikonę wystarczy zagnieździć komponent ikony wewnątrz lub dowolny symbol, znak wewnątrz komponentu input), obsługa placeholdera, etykiety
+
+  ```
+  <Input placeholder="Type text..." size="big">
+      Szukaj
+      <Icon type="search" />
+  </Input>
+  ```
+
+- dynamicznie generowany motyw z themeproviderem z możliwością łatwego dodania wariantów cieni i kolorów
+- ożliwość pracy komponentu niezależnie bez motywu, (domyślne wartości kolorów)
 
 ### problemy i ich rozwiązania + fragmenty kodu
 
