@@ -21,25 +21,24 @@ const variant = {
 };
 
 const StyledInputWrapper = styled.div`
+	/* default colors */
+	--bg: ${({ theme }) => theme.color?.background || '#e6e6e6'};
+	--text: ${({ theme }) => theme.color?.text || '#686868'};
+	--shadowLight: ${({ theme }) => theme.color?.shadowLight || '#ffffff'};
+	--shadowDark: ${({ theme }) => theme.color?.shadowDark || '#939699'};
+	--accent: ${({ theme }) => theme.color?.accent || '#0088ff'};
+
 	align-items: stretch;
-	column-gap: 0.5em;
 	background-image: linear-gradient(
 		110deg,
-		${({ theme }) => theme.color?.shadowLight || '#c7c7c7'} -120%,
-		${({ theme }) => theme.color?.background || '#adadad'} 50%
+		var(--shadowLight) -120%,
+		var(--bg) 50%
 	);
 	box-shadow: ${({ theme }) => theme.shadow?.verySmall.pressed};
 	border-radius: 2em;
 	border: none;
-	color: ${({ theme }) => theme.color?.text || '#302f2f'};
-	${StyledInput},${StyledInput}::placeholder {
-		color: ${({ theme }) => theme.color?.text || '#302f2f'};
-		transition: color 0.3s ease;
-	}
-	${StyledInput}::placeholder {
-		font-weight: 300;
-	}
-
+	color: var(--text);
+	column-gap: 0.5em;
 	display: inline-flex;
 	font-weight: 400;
 	margin: 1rem;
@@ -54,16 +53,23 @@ const StyledInputWrapper = styled.div`
 	vertical-align: middle;
 	&:hover,
 	&:hover ${StyledInput}::placeholder, &:hover ${StyledInput} {
-		/* box-shadow: ${({ theme }) => theme.shadow?.veryBig.flat}; */
-		color: ${({ theme }) => theme.color?.accent};
+		color: var(--accent);
 	}
+	${StyledInput},${StyledInput}::placeholder {
+		color: var(--text);
+		transition: color 0.3s ease;
+	}
+	${StyledInput}::placeholder {
+		font-weight: 300;
+	}
+
 	${({ type, theme }) =>
 		type !== 'radio' &&
 		`
 		&:has(${StyledInput}:focus) {
-			box-shadow: ${({ theme }) => `${theme.shadow?.medium.flat},
-				${theme.shadow?.small.pressed}`};
-			color: ${({ theme }) => theme.color?.accent};
+			box-shadow: ${theme.shadow?.medium.flat},
+						${theme.shadow?.small.pressed};
+			color: var(--accent);
 			outline: none;
 			scale: 1.2;
 		}
@@ -86,19 +92,18 @@ const StyledInputWrapper = styled.div`
 
 		${StyledInput} { 
 		appearance:none;
-		background-color: ${theme.color?.background || '#adadad'};
+		background-color: var(--bg);
 		width: 1em;
 		height:1em;
 		display: grid;
   		place-content: center;
   		cursor: pointer;
-		border: 2px solid ${theme.color?.background || '#adadad'};
-		outline: 2px solid ${theme.color?.text || '#302f2f'};
+		border: 2px solid var(--bg);
+		outline: 2px solid var(--text);
 		border-radius: 50%;
 			&:checked {
-				background-color: ${theme.color?.text || '#302f2f'};
+				background-color: var(--text);
 			}
-			
 		}
 	`}
 	${({ style }) => style}
