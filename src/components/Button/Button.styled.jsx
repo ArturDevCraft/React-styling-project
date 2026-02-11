@@ -20,15 +20,22 @@ const variant = {
 };
 
 const StyledButton = styled.button`
+	/* default colors */
+	--bg: ${({ theme }) => theme.color?.background || '#e6e6e6'};
+	--text: ${({ theme }) => theme.color?.text || '#686868'};
+	--shadowLight: ${({ theme }) => theme.color?.shadowLight || '#ffffff'};
+	--shadowDark: ${({ theme }) => theme.color?.shadowDark || '#939699'};
+	--accent: ${({ theme }) => theme.color?.accent || '#0088ff'};
+
 	background-image: linear-gradient(
 		110deg,
-		${({ theme }) => theme.color?.shadowLight || '#c7c7c7'} -120%,
-		${({ theme }) => theme.color?.background || '#adadad'} 50%
+		var(--shadowLight) -120%,
+		var(--bg) 50%
 	);
 	box-shadow: ${({ theme }) => theme.shadow?.medium.flat};
 	border-radius: 2em;
 	border: none;
-	color: ${({ theme }) => theme.color?.text || '#302f2f'};
+	color: var(--text);
 	cursor: pointer;
 	font-weight: 600;
 	margin: 1rem;
@@ -41,8 +48,7 @@ const StyledButton = styled.button`
 		box-shadow 0.3s ease;
 	white-space: nowrap;
 	&:hover {
-		/* box-shadow: ${({ theme }) => theme.shadow?.veryBig.flat}; */
-		color: ${({ theme }) => theme.color?.accent};
+		color: var(--accent);
 		scale: 1.05;
 	}
 	&:active {
