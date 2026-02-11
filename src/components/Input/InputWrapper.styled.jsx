@@ -57,7 +57,7 @@ const StyledInputWrapper = styled.div`
 		/* box-shadow: ${({ theme }) => theme.shadow?.veryBig.flat}; */
 		color: ${({ theme }) => theme.color?.accent};
 	}
-	${({ type }) =>
+	${({ type, theme }) =>
 		type !== 'radio' &&
 		`
 		&:has(${StyledInput}:focus) {
@@ -65,9 +65,9 @@ const StyledInputWrapper = styled.div`
 				${theme.shadow?.small.pressed}`};
 			color: ${({ theme }) => theme.color?.accent};
 			outline: none;
-			scale: 1.2;`}}
-
-	
+			scale: 1.2;
+		}
+		`}
 
 	${({ size }) => variant?.[size] ?? variant.medium}
 	${({ shape }) => variant?.[shape]}
@@ -79,6 +79,9 @@ const StyledInputWrapper = styled.div`
 		`
 		width: auto; padding: 0.9em; 
 		box-shadow: ${theme.shadow?.medium.flat};
+		&:has(${StyledInput}:checked){
+			box-shadow: ${theme.shadow?.verySmall.pressed};
+		}
 		${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
 
 		${StyledInput} { 
@@ -89,7 +92,8 @@ const StyledInputWrapper = styled.div`
 		display: grid;
   		place-content: center;
   		cursor: pointer;
-		border: 2px solid ${theme.color?.text || '#302f2f'};
+		border: 2px solid ${theme.color?.background || '#adadad'};
+		outline: 2px solid ${theme.color?.text || '#302f2f'};
 		border-radius: 50%;
 			&:checked {
 				background-color: ${theme.color?.text || '#302f2f'};

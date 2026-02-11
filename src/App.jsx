@@ -94,7 +94,6 @@ function App() {
 					value="aa"
 					label="aa"
 					type="radio"
-					checked={true}
 				/>
 				<Input
 					name="test"
