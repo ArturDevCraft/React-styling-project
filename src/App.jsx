@@ -116,6 +116,7 @@ function App() {
 					size="medium"
 				/>
 				<Input onClick={toggleTcheme} placeholder="Type text..." size="big">
+					Szukaj
 					<Icon type="search" />
 				</Input>
 				<Input onClick={toggleTcheme} placeholder="Type text..." size="small" />
@@ -199,6 +200,12 @@ function App() {
 				<Icon type="arrowUp" />
 				<Icon type="arrowLeft" />
 			</ThemeProvider>
+			<Input
+				onClick={toggleTcheme}
+				placeholder="Type text..."
+				size="big"
+				shape="round"
+			/>
 		</>
 	);
 }

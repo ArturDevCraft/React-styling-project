@@ -58,6 +58,7 @@ const StyledInputWrapper = styled.div`
 	${StyledInput},${StyledInput}::placeholder {
 		color: var(--text);
 		transition: color 0.3s ease;
+		${({ style }) => style && `color: ${style.color}`}
 	}
 	${StyledInput}::placeholder {
 		font-weight: 300;

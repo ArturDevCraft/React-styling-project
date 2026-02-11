@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledInput = styled.input`
 	background: transparent;
+	color: inherit;
 	border: none;
 	font-family: inherit;
 	font-weight: inherit;
