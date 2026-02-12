@@ -13,7 +13,7 @@ export default function Select({
 	shape,
 	options,
 	placeholder,
-	checked,
+	children,
 	label,
 }) {
 	const content = (
@@ -24,19 +24,23 @@ export default function Select({
 			style={style}
 			shape={shape}
 			onClick={onClick}
+			onChange={onChange}
+			value={value}
+			innerContent={children}
 		>
-			<Option
-				name={name}
-				placeholder={placeholder}
-				onChange={onChange}
-				value={value}
-				type={type}
-				checked={checked}
-			/>
+			{placeholder && <Option>{placeholder}</Option>}
+			{options.map(({ name: selectName, value: selectValue }) => (
+				<Option
+					key={`${name}-${selectValue}-${selectName.replace(/\s+/g, '')}`}
+					value={selectValue}
+				>
+					{selectName}
+				</Option>
+			))}
 		</StyledSelect>
 	);
 	return label ? (
-		<StyledLabel htmlFor="name">
+		<StyledLabel htmlFor={name}>
 			{label}
 			{content}
 		</StyledLabel>

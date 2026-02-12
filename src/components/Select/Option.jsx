@@ -1,5 +1,5 @@
 import StyledOption from './Option.styled';
 
-export default function Option({ children }) {
-	return <StyledOption>{children}</StyledOption>;
+export default function Option({ value, children }) {
+	return <StyledOption value={value}>{children}</StyledOption>;
 }
