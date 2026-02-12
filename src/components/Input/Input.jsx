@@ -1,6 +1,7 @@
 import StyledInput from './Input.styled';
 import StyledLabel from './label.styled';
 import StyledInputWrapper from './InputWrapper.styled';
+import { useRef } from 'react';
 
 export default function Input({
 	children,
@@ -17,6 +18,12 @@ export default function Input({
 	checked,
 	label,
 }) {
+	const inputRef = useRef(null);
+	const handleClick = () => {
+		inputRef.current.focus();
+		onClick();
+	};
+
 	const tag =
 		(type === 'text' || type === undefined) && shape === 'square'
 			? 'textarea'
@@ -28,12 +35,13 @@ export default function Input({
 			width={width}
 			style={style}
 			shape={shape}
-			onClick={onClick}
+			onClick={handleClick}
 			checked={checked}
 			type={type}
 		>
 			{children}
 			<StyledInput
+				ref={inputRef}
 				as={tag}
 				id="name"
 				name={name}
