@@ -46,10 +46,10 @@ export default function Input({
 		</StyledInputWrapper>
 	);
 	return label ? (
-		<StyledLabel htmlFor="name">
+		<StyledLabel htmlFor={name}>
 			{type === 'checkbox' || type === 'radio'
 				? [content, label]
-				: [label, ':', content]}
+				: [label, content]}
 		</StyledLabel>
 	) : (
 		content
