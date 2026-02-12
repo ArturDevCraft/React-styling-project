@@ -19,6 +19,7 @@ const variant = {
 };
 const StyledInnerSelect = styled.select`
 	background: transparent;
+	cursor: pointer;
 	color: inherit;
 	border: none;
 	font-family: inherit;
@@ -78,7 +79,7 @@ const StyledSelectWrapper = styled.div`
 
 const StyledSelect = ({ children, innerContent, ...props }) => (
 	<StyledSelectWrapper {...props}>
-		{innerContent ?? 'nothing'}
+		{innerContent ?? ''}
 		<StyledInnerSelect {...props}>{children}</StyledInnerSelect>
 	</StyledSelectWrapper>
 );
