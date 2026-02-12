@@ -65,7 +65,7 @@ const StyledSelectWrapper = styled.div`
 	white-space: nowrap;
 	vertical-align: middle;
 	&:hover,
-	&:hover ${StyledInnerSelect}::placeholder, &:hover ${StyledInnerSelect} {
+	&:hover ${StyledInnerSelect} {
 		color: var(--accent);
 	}
 
