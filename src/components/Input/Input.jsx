@@ -21,7 +21,7 @@ export default function Input({
 	const inputRef = useRef(null);
 	const handleClick = () => {
 		inputRef.current.focus();
-		onClick();
+		onClick?.();
 	};
 
 	const tag =
