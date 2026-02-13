@@ -17,7 +17,6 @@ export default function Slider({
 	max = 100,
 	step,
 }) {
-	console.log(value);
 	const initialSliderVal = value < min ? min : val;
 	const [sliderVal, setSliderVal] = useState(initialSliderVal);
 	const changeHandler = (e) => {
