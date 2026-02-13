@@ -2,9 +2,11 @@ import { createGlobalStyle } from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import Button from './components/Button';
 import Input from './components/Input';
+import Select from './components/Select';
 import theme from './theme';
 import { useState } from 'react';
 import Icon from './components/Icon/Icon';
+import Slider from './components/Slider';
 
 const GlobalStyle = createGlobalStyle`
 html{
@@ -78,6 +80,54 @@ function App() {
 					Toggle theme
 				</Button>
 
+				{/* Sliders */}
+
+				<Slider
+					name="slider1"
+					label="Set the valuye"
+					placeholder="set the value"
+					min="1"
+					max="100"
+				>
+					<Icon type="location" />
+				</Slider>
+
+				<Slider
+					name="slider1"
+					label="Set the valuye"
+					placeholder="set the value"
+					min="1"
+					max="100"
+					step="1"
+					defaultValue="90"
+				>
+					<Icon type="location" />
+				</Slider>
+				{/* Selects */}
+				<Select
+					name="choose"
+					label="Select your favourite option:"
+					placeholder="choose something..."
+					options={[
+						{ name: 'option1', value: 1 },
+						{ name: 'option2', value: 2 },
+						{ name: 'option3', value: false },
+					]}
+				>
+					<Icon type="location" />
+				</Select>
+
+				<Select
+					name="choose"
+					label="Select your favourite option:"
+					placeholder="choose something..."
+					options={[
+						{ name: 'option1', value: 1 },
+						{ name: 'option2', value: 2 },
+						{ name: 'option3', value: false },
+					]}
+				/>
+
 				{/* INPUTS */}
 				<Input
 					name="test"
@@ -110,7 +160,7 @@ function App() {
 					label="aa"
 					type="checkbox"
 				/>
-        
+
 				<Input
 					onClick={toggleTcheme}
 					placeholder="Type text..."
