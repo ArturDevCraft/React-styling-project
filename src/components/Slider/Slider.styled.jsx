@@ -1,22 +1,5 @@
 import styled from 'styled-components';
-const variant = {
-	small: {
-		width: '14rem',
-		fontSize: '1.3rem',
-	},
-	medium: { width: '18rem', fontSize: '1.6rem' },
-	big: { width: '22rem', fontSize: '2rem' },
-	square: {
-		aspectRatio: '1 / 1',
-		whiteSpace: 'wrap',
-		lineHeight: 1.5,
-		borderRadius: '20%',
-		padding: '1.3em',
-	},
-	get round() {
-		return { ...this.square, borderRadius: '50%' };
-	},
-};
+import variant from './variants';
 
 const sliderThumbStyles = `
 		appearance: none;
@@ -35,11 +18,7 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	font-weight: 400;
 	overflow: hidden;
 	padding: 0;
-	text-overflow: ellipsis;
-	transition:
-		color 0.3s ease,
-		box-shadow 0.3s ease,
-		scale 0.3s ease-out;
+	transition: opacity 0.3s ease-out;
 	white-space: nowrap;
 	vertical-align: middle;
 	line-height: 1;
@@ -56,6 +35,8 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	background-repeat: no-repeat;
 	border-radius: 2em;
 	height: 2.95em;
+	width: 100%;
+	opacity: 0.7;
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		${sliderThumbStyles}
@@ -65,15 +46,8 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	}
 
 	&:hover {
-		color: var(--accent);
+		opacity: 1;
 	}
-
-	${({ size }) => variant?.[size] ?? variant.medium}
-	${({ shape }) => variant?.[shape]}
-	${({ width, size }) =>
-		width &&
-		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
-	${({ style }) => style}
 `;
 
 const StyledSliderWrapper = styled.div`
@@ -90,11 +64,42 @@ const StyledSliderWrapper = styled.div`
 	margin: 1rem;
 	display: inline-flex;
 	vertical-align: middle;
+	${({ size }) => variant?.[size] ?? variant.medium}
+	${({ shape }) => variant?.[shape]}
+	${({ width, size }) =>
+		width &&
+		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+	${({ style }) => style}
 `;
 
-const StyledSlider = ({ children, ...props }) => (
-	<StyledSliderWrapper {...props}>
-		<StyledSliderInner {...props} />
+const StyledSlider = ({
+	onClick,
+	onChange,
+	name,
+	value,
+	size,
+	width,
+	style,
+	type,
+	min,
+	max,
+	step,
+}) => (
+	<StyledSliderWrapper
+		onClick={onClick}
+		style={style}
+		width={width}
+		type={type}
+		size={size}
+	>
+		<StyledSliderInner
+			onChange={onChange}
+			name={name}
+			value={value}
+			min={min}
+			max={max}
+			step={step}
+		/>
 	</StyledSliderWrapper>
 );
 

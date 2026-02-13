@@ -18,6 +18,7 @@ export default function Select({
 }) {
 	const content = (
 		<StyledSelect
+			id={name}
 			name={name}
 			size={size}
 			width={width}
@@ -40,7 +41,7 @@ export default function Select({
 		</StyledSelect>
 	);
 	return label ? (
-		<StyledLabel htmlFor={name}>
+		<StyledLabel size={size} htmlFor={name}>
 			{label}
 			{content}
 		</StyledLabel>

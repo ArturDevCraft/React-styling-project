@@ -24,26 +24,27 @@ export default function Slider({
 		onChange?.();
 	};
 	const content = (
-		<StyledSlider
-			name={name}
-			size={size}
-			width={width}
-			style={style}
-			onClick={onClick}
-			onChange={changeHandler}
-			value={sliderVal}
-			type={type}
-			min={min}
-			max={max}
-			step={step}
-		>
+		<>
 			{children}
-		</StyledSlider>
+			<StyledSlider
+				id={name}
+				name={name}
+				size={size}
+				width={width}
+				style={style}
+				onClick={onClick}
+				onChange={changeHandler}
+				value={sliderVal}
+				type={type}
+				min={min}
+				max={max}
+				step={step}
+			></StyledSlider>
+		</>
 	);
 	return label ? (
-		<StyledLabel htmlFor={name}>
-			{label}
-			{content}
+		<StyledLabel size={size} htmlFor={name}>
+			{label} {content}
 		</StyledLabel>
 	) : (
 		content

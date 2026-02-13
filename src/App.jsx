@@ -88,6 +88,7 @@ function App() {
 					placeholder="set the value"
 					min="1"
 					max="100"
+					size="big"
 				>
 					<Icon type="location" />
 				</Slider>
@@ -121,6 +122,7 @@ function App() {
 					name="choose"
 					label="Select your favourite option:"
 					placeholder="choose something..."
+					size="big"
 					options={[
 						{ name: 'option1', value: 1 },
 						{ name: 'option2', value: 2 },
@@ -133,7 +135,7 @@ function App() {
 					name="test"
 					placeholder="Type text..."
 					size="small"
-					label="aa"
+					label="totot"
 					type="text"
 				/>
 				<Input
@@ -153,11 +155,11 @@ function App() {
 					type="radio"
 				/>
 				<Input
-					name="check"
+					name="check2213"
 					placeholder="Text"
-					size="small"
+					size="big"
 					value="aa"
-					label="aa"
+					label="aaasdasda"
 					type="checkbox"
 				/>
 
