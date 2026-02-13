@@ -43,7 +43,7 @@ export default function Input({
 			<StyledInput
 				ref={inputRef}
 				as={tag}
-				id="name"
+				id={name}
 				name={name}
 				placeholder={placeholder}
 				onChange={onChange}
