@@ -89,6 +89,7 @@ const StyledSliderWrapper = styled.div`
 	padding: 0;
 	margin: 1rem;
 	display: inline-flex;
+	vertical-align: middle;
 `;
 
 const StyledSlider = ({ children, ...props }) => (
