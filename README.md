@@ -21,6 +21,16 @@
   ```
 
 - dynamicznie generowany motyw z themeproviderem z możliwością łatwego dodania wariantów cieni i kolorów
+  - komponent themeprovidera który obsługuje logikę przełączania motywów dając dostęp z poziomu kontektu motywu, w którym się znajduje np:
+  ```
+  import { useTheme } from 'styled-components';
+  ...
+  	const { toggleTheme } = useTheme();
+  ...
+  		<Button onClick={toggleTheme} >
+  			Toggle theme
+  		</Button>
+  ```
 - ożliwość pracy komponentu niezależnie bez motywu, (domyślne wartości kolorów)
 
 ### problemy i ich rozwiązania + fragmenty kodu
