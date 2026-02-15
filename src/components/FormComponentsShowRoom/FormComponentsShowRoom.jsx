@@ -3,8 +3,10 @@ import Input from '../Input';
 import Select from '../Select';
 import Icon from '../Icon/Icon';
 import Slider from '../Slider';
+import { useTheme } from 'styled-components';
 
-export default function FormComponentShowRoom({ callback: toggleTheme }) {
+export default function FormComponentShowRoom() {
+	const { toggleTheme } = useTheme();
 	return (
 		<>
 			<Button onClick={toggleTheme} size="small">
