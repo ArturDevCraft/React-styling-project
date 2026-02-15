@@ -31,5 +31,15 @@ export const colors = [
 			shadowDark: '#c1b7a7',
 		},
 	},
+	{
+		name: 'zosiaTheme',
+		colors: {
+			accent: '#ff9b4e',
+			background: '#000000',
+			text: '#fff09a',
+			shadowLight: '#9f9f9f',
+			shadowDark: '#211b10',
+		},
+	},
 ];
 export default colors;
