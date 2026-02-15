@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import FormComponentShowRoom from './components/FormComponentsShowRoom';
-import ThemeProvider from './theme/ThemeProvider';
+import { ThemeProvider } from './theme';
 
 const GlobalStyle = createGlobalStyle`
 html{
