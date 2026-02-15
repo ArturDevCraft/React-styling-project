@@ -3,7 +3,7 @@ import theme from './theme';
 import { useState } from 'react';
 
 export default function ThemeProvider({ children }) {
-	const themes = ['light', 'dark', 'warm'];
+	const themes = Object.keys(theme);
 	const [currentTheme, setCurrentTheme] = useState(themes[0]);
 
 	const toggleTheme = () => {
