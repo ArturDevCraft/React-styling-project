@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FONT_AWESOME_KIT_URL = 'https://kit.fontawesome.com/4704e1b632.js';
 const SCRIPT_ID = 'font-awesome-kit-script';
 
-const StyledI = styled.i`
+const StyledWrapper = styled.span`
 	${({ style }) => style}
 `;
 
@@ -41,11 +41,10 @@ export default function Icon({ type, variant = 'solid', style }) {
 		script.crossOrigin = 'anonymous';
 		document.head.appendChild(script);
 	}, []);
+	const iconClass = iconVariants[variant] + ' ' + iconTypes[type];
 	return (
-		<StyledI
-			key={iconTypes[type]}
-			style={style}
-			className={iconVariants[variant] + ' ' + iconTypes[type]}
-		/>
+		<StyledWrapper key={iconClass} style={style}>
+			<i className={iconClass} />
+		</StyledWrapper>
 	);
 }
