@@ -55,9 +55,17 @@ export default function Input({
 	);
 	return label ? (
 		<StyledLabel size={size} htmlFor={name}>
-			{type === 'checkbox' || type === 'radio'
-				? [content, label]
-				: [label, content]}
+			{type === 'checkbox' || type === 'radio' ? (
+				<>
+					{content}
+					{label}
+				</>
+			) : (
+				<>
+					{label}
+					{content}
+				</>
+			)}
 		</StyledLabel>
 	) : (
 		content
