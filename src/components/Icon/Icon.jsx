@@ -26,6 +26,8 @@ export default function Icon({ type, variant = 'solid', style }) {
 		arrowUp: 'fa-angle-up', //solid
 		arrowLeft: 'fa-angle-left', //solid
 		brush: 'fa-brush', //solid
+		play: 'fa-play', // solid
+		pause: 'fa-pause', //solid
 	};
 
 	useEffect(() => {
@@ -41,6 +43,7 @@ export default function Icon({ type, variant = 'solid', style }) {
 	}, []);
 	return (
 		<StyledI
+			key={iconTypes[type]}
 			style={style}
 			className={iconVariants[variant] + ' ' + iconTypes[type]}
 		/>
