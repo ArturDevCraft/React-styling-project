@@ -21,7 +21,7 @@ export default function Slider({
 	const [sliderVal, setSliderVal] = useState(initialSliderVal);
 	const changeHandler = (e) => {
 		setSliderVal(e.target.value);
-		onChange?.();
+		onChange?.(e);
 	};
 	const content = (
 		<StyledSlider
@@ -44,6 +44,8 @@ export default function Slider({
 			{children} {label} {content}
 		</StyledLabel>
 	) : (
-		<>{children} content</>
+		<>
+			{children} {content}
+		</>
 	);
 }

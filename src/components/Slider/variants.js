@@ -1,4 +1,8 @@
 const variant = {
+	verySmall: {
+		width: '10rem',
+		fontSize: '0.8rem',
+	},
 	small: {
 		width: '14rem',
 		fontSize: '1.3rem',
