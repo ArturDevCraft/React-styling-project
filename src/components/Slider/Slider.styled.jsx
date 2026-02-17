@@ -18,7 +18,6 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	font-weight: 400;
 	overflow: hidden;
 	padding: 0;
-	transition: opacity 0.3s ease-out;
 	white-space: nowrap;
 	vertical-align: middle;
 	line-height: 1;
@@ -36,17 +35,12 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	border-radius: 2em;
 	height: 2.95em;
 	width: 100%;
-	opacity: 0.7;
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		${sliderThumbStyles}
 	}
 	&::-moz-range-thumb {
 		${sliderThumbStyles}
-	}
-
-	&:hover {
-		opacity: 1;
 	}
 `;
 
@@ -64,6 +58,10 @@ const StyledSliderWrapper = styled.div`
 	margin: 1rem;
 	display: inline-flex;
 	vertical-align: middle;
+	transition: scale 0.3s ease-out;
+	&:hover {
+		scale: 1.1;
+	}
 	${({ size }) => variant?.[size] ?? variant.medium}
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
