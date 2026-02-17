@@ -1,16 +1,5 @@
 export const colors = [
 	{
-		name: 'dark',
-		colors: {
-			accent: '#6d5dfc', // Powrót do Twojego oryginału lub #8b80ff
-			background: '#2f333d', // Jaśniejszy antracyt - daje "miejsce" na cienie
-			text: '#e0e5ec', // Jasny tekst dla kontrastu
-			shadowLight: '#3c424c', // Wyraźnie jaśniejszy od tła
-			shadowDark: '#20242e',
-		},
-	},
-
-	{
 		name: 'light',
 		colors: {
 			accent: '#0088ff',
@@ -20,7 +9,16 @@ export const colors = [
 			shadowDark: '#939699',
 		},
 	},
-
+	{
+		name: 'dark',
+		colors: {
+			accent: '#6d5dfc', // Powrót do Twojego oryginału lub #8b80ff
+			background: '#2f333d', // Jaśniejszy antracyt - daje "miejsce" na cienie
+			text: '#e0e5ec', // Jasny tekst dla kontrastu
+			shadowLight: '#3c424c', // Wyraźnie jaśniejszy od tła
+			shadowDark: '#20242e',
+		},
+	},
 	{
 		name: 'warm',
 		colors: {

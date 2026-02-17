@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function ThemeProvider({ children }) {
 	const themes = Object.keys(theme);
-	const [currentTheme, setCurrentTheme] = useState(themes[0]);
+	const [currentTheme, setCurrentTheme] = useState(themes[themes.length - 1]);
 
 	const toggleTheme = () => {
 		const themeIndex = themes.indexOf(currentTheme);
