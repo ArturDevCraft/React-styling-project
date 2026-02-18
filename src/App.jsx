@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import FormComponentShowRoom from './components/FormComponentsShowRoom';
 import { ThemeProvider } from './theme';
-import RadioPlayer from './components/RadioPlayer/RadioPlayer';
+import HireMe from './components/HireMe';
 
 const GlobalStyle = createGlobalStyle`
 html{
@@ -15,14 +15,13 @@ html{
 `;
 
 export default function App() {
-	// console.log(theme);
-
 	return (
 		<>
 			<ThemeProvider>
 				<GlobalStyle />
-				<FormComponentShowRoom />
-				<RadioPlayer url="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
+				{/* <FormComponentShowRoom /> */}
+
+				<HireMe />
 			</ThemeProvider>
 		</>
 	);
