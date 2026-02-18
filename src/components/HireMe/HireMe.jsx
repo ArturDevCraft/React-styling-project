@@ -3,13 +3,16 @@ import RadioPlayer from '../RadioPlayer';
 import StyledHeader from '../Header.styled';
 import Button from '../Button';
 import Icon from '../Icon';
+import StyledWrapper from '../Wrapper.styled';
+import StyledHorizontalLine from '../HorizontalLine.styled';
 
 export default function HireMe() {
 	const { toggleTheme } = useTheme();
 	return (
-		<section>
+		<StyledWrapper>
 			<StyledHeader>
 				<RadioPlayer url="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
+				<h2>Hire me! - candidate profile generator</h2>
 				<Button
 					onClick={toggleTheme}
 					size="small"
@@ -21,7 +24,7 @@ export default function HireMe() {
 					<Icon type="brush" />
 				</Button>
 			</StyledHeader>
-			<h1>Hire me! - candidate profile generator</h1>
-		</section>
+			<StyledHorizontalLine />
+		</StyledWrapper>
 	);
 }
