@@ -16,6 +16,9 @@ export default function Slider({
 	min = 0,
 	max = 100,
 	step,
+	tooltip,
+	tooltipPosition,
+	tooltipSize,
 }) {
 	const initialSliderVal = value < min ? min : value;
 	const [sliderVal, setSliderVal] = useState(initialSliderVal);
@@ -37,6 +40,9 @@ export default function Slider({
 			min={min}
 			max={max}
 			step={step}
+			$tooltip={tooltip}
+			$tooltipPosition={tooltipPosition}
+			$tooltipSize={tooltipSize}
 		></StyledSlider>
 	);
 	return label ? (

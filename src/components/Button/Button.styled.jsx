@@ -15,7 +15,10 @@ const tooltip = css`
 				box-shadow: ${({ theme }) => theme.shadow?.small.flat};
 				color: var(--bg);
 				position: absolute;
-
+				${props.$tooltipSize !== '' &&
+				css`
+					font-size: ${variant?.[props.$tooltipSize]?.fontSize};
+				`}
 				${props.$tooltipPosition === 'bottom' &&
 				css`
 					top: calc(100% + 1rem);
