@@ -36,10 +36,11 @@ export default function RadioPlayer({ url }) {
 			<Button
 				onClick={togglePlay}
 				size="small"
-				width="0.45"
-				shape="rectangle"
-				tooltip="Let's listen ma favorite radio!"
+				width="0.3"
+				shape="square"
+				tooltip="Let's listen my favorite radio!"
 				tooltipPosition="right"
+				tooltipSize="small"
 			>
 				{buttonContent}
 			</Button>
@@ -50,6 +51,9 @@ export default function RadioPlayer({ url }) {
 				step="0.01"
 				onChange={volumeChange}
 				size="verySmall"
+				tooltip="Change volume"
+				tooltipPosition="bottom"
+				tooltipSize="small"
 			/>
 		</StyledRadioPlayer>
 	);
