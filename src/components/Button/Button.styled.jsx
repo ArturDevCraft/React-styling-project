@@ -6,7 +6,6 @@ const tooltip = css`
 	${(props) =>
 		props.$tooltip &&
 		css`
-			position: relative;
 			overflow: visible;
 			&::after {
 				content: ${(props) => (props.$tooltip ? `"${props.$tooltip}"` : '""')};

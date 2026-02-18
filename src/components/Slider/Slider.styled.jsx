@@ -5,7 +5,6 @@ const tooltip = css`
 	${(props) =>
 		props.$tooltip &&
 		css`
-			position: relative;
 			overflow: visible;
 			&::after {
 				content: ${(props) => (props.$tooltip ? `"${props.$tooltip}"` : '""')};
@@ -139,6 +138,7 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	border-radius: 2em;
 	height: 2.95em;
 	width: 100%;
+
 	&::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		${sliderThumbStyles}
@@ -163,6 +163,8 @@ const StyledSliderWrapper = styled.div`
 	display: inline-flex;
 	vertical-align: middle;
 	transition: scale 0.3s ease-out;
+	z-index: 0;
+
 	&:hover {
 		scale: 1.1;
 	}
