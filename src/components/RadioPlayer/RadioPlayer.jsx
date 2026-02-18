@@ -38,7 +38,7 @@ export default function RadioPlayer({ url }) {
 				size="small"
 				width="0.3"
 				shape="square"
-				tooltip="Let's listen my favorite radio!"
+				tooltip="Let's listen my favorite radio station!"
 				tooltipPosition="right"
 				tooltipSize="small"
 			>

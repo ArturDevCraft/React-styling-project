@@ -33,7 +33,7 @@ const StyledButton = styled.button`
 	white-space: nowrap;
 	&:hover {
 		color: var(--accent);
-		scale: 1.05;
+		scale: 1.07;
 	}
 	${tooltip(variant)}
 	&:active {
