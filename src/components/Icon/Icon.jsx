@@ -29,6 +29,7 @@ export default function Icon({ type, variant = 'solid', style }) {
 		play: 'fa-play', // solid
 		pause: 'fa-pause', //solid
 		logo: 'fa-address-card', //solid
+		radio: 'fa-radio', //solid
 	};
 
 	useEffect(() => {

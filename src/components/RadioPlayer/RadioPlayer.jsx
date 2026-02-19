@@ -33,6 +33,7 @@ export default function RadioPlayer({ url }) {
 	return (
 		<StyledRadioPlayer>
 			<audio ref={audioRef} src={url} preload="none" />
+			<Icon type="radio" style={{ fontSize: '3em' }} />
 			<Button
 				onClick={togglePlay}
 				size="small"
