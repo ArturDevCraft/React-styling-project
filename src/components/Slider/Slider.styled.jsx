@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import variant from './variants';
 import tooltip from '../../theme/tooltip';
+import Slider from './Slider';
 
 const sliderThumbStyles = `
 		appearance: none;
@@ -52,6 +53,8 @@ const StyledSliderWrapper = styled.div`
 	--shadowLight: ${({ theme }) => theme.color?.shadowLight || '#ffffff'};
 	--shadowDark: ${({ theme }) => theme.color?.shadowDark || '#939699'};
 	--accent: ${({ theme }) => theme.color?.accent || '#0088ff'};
+	--accentHover: ${({ theme }) => theme.color?.accentHover || '#0077e0'};
+
 	background-color: var(--bg);
 	box-shadow: ${({ theme }) => theme.shadow?.small.pressed};
 	column-gap: 0.5em;
@@ -65,6 +68,15 @@ const StyledSliderWrapper = styled.div`
 
 	&:hover {
 		scale: 1.1;
+		${StyledSliderInner} {
+			background-image: linear-gradient(var(--accentHover), var(--accentHover));
+		}
+		${StyledSliderInner}::-webkit-slider-thumb {
+			background-color: var(--accentHover);
+		}
+		${StyledSliderInner}::-moz-range-thumb {
+			background-color: var(--accentHover);
+		}
 	}
 	${tooltip(variant)}
 	${({ size }) => variant?.[size] ?? variant.medium}

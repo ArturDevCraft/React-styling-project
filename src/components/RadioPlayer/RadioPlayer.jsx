@@ -3,11 +3,14 @@ import Button from '../Button';
 import Icon from '../Icon';
 import Slider from '../Slider';
 import StyledRadioPlayer from './RadioPlayer.styled';
+import StyledRowWrapper from '../RowWrapper.styled';
+import { useTheme } from 'styled-components';
 
 export default function RadioPlayer({ url }) {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [volume, setVolume] = useState(1);
 	const audioRef = useRef(null);
+	const { color } = useTheme();
 
 	const togglePlay = () => {
 		if (isPlaying) {
@@ -30,21 +33,28 @@ export default function RadioPlayer({ url }) {
 		<Icon type="play" />
 	);
 
+	const iconStyle = {
+		fontSize: '3em',
+		color: isPlaying ? color.accentHover : color.text,
+	};
+
 	return (
 		<StyledRadioPlayer>
 			<audio ref={audioRef} src={url} preload="none" />
-			<Icon type="radio" style={{ fontSize: '3em' }} />
-			<Button
-				onClick={togglePlay}
-				size="small"
-				width="0.3"
-				shape="square"
-				tooltip="Let's listen my favorite radio station!"
-				tooltipPosition="right"
-				tooltipSize="small"
-			>
-				{buttonContent}
-			</Button>
+			<StyledRowWrapper align="center">
+				<Icon type="radio" style={iconStyle} />
+				<Button
+					onClick={togglePlay}
+					size="small"
+					width="0.3"
+					shape="square"
+					tooltip="Let's listen my favorite radio station!"
+					tooltipPosition="right"
+					tooltipSize="small"
+				>
+					{buttonContent}
+				</Button>
+			</StyledRowWrapper>
 			<Slider
 				value={volume}
 				min="0"

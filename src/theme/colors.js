@@ -1,8 +1,11 @@
+import { useActionState } from 'react';
+
 export const colors = [
 	{
 		name: 'light',
 		colors: {
 			accent: '#0088ff',
+			accentHover: '#0070d2',
 			background: '#e6e6e6',
 			text: '#686868',
 			shadowLight: '#ffffff',
@@ -12,10 +15,11 @@ export const colors = [
 	{
 		name: 'dark',
 		colors: {
-			accent: '#6d5dfc', // Powrót do Twojego oryginału lub #8b80ff
-			background: '#2f333d', // Jaśniejszy antracyt - daje "miejsce" na cienie
-			text: '#e0e5ec', // Jasny tekst dla kontrastu
-			shadowLight: '#3c424c', // Wyraźnie jaśniejszy od tła
+			accent: '#6d5dfc',
+			accentHover: '#5a4bd8',
+			background: '#2f333d',
+			text: '#e0e5ec',
+			shadowLight: '#3c424c',
 			shadowDark: '#20242e',
 		},
 	},
@@ -23,6 +27,7 @@ export const colors = [
 		name: 'warm',
 		colors: {
 			accent: '#ea7243',
+			accentHover: '#d86030',
 			background: '#f4e7d5',
 			text: '#5b4636',
 			shadowLight: '#fffded',
@@ -33,6 +38,7 @@ export const colors = [
 		name: 'zosiaTheme',
 		colors: {
 			accent: '#ff9b4e',
+			accentHover: '#ff7a1c',
 			background: '#000000',
 			text: '#fff09a',
 			shadowLight: '#9f9f9f',
