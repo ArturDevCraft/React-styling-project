@@ -27,29 +27,22 @@ export default function HireMe() {
 					<RadioPlayer url="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
 				</StyledColumnWrapper>
 				<StyledColumnWrapper>
-					<StyledRowWrapper>
-						<StyledColumnWrapper>
-							{skills.map(({ name }) => (
-								<p>{name}</p>
-							))}
-						</StyledColumnWrapper>
-						<StyledColumnWrapper>
-							{skills.map(({ name, level }) => (
-								<>
-									<Slider
-										name={name}
-										size="verySmall"
-										width="2"
-										value={level}
-										min="0"
-										max="10"
-										onChange={(e) => setSkillLevel(name, e.target.value)}
-									/>
-									<span>{level}</span>
-								</>
-							))}
-						</StyledColumnWrapper>
-					</StyledRowWrapper>
+					<StyledColumnWrapper>
+						{skills.map(({ name, level }) => (
+							<>
+								<Slider
+									name={name}
+									size="medium"
+									value={level}
+									min="0"
+									max="10"
+									label={name}
+									thickness="thicker"
+									onChange={(e) => setSkillLevel(name, e.target.value)}
+								/>
+							</>
+						))}
+					</StyledColumnWrapper>
 					<Input size="small" placeholder="Skill name">
 						{' '}
 					</Input>
