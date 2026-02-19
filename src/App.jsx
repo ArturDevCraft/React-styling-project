@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import FormComponentShowRoom from './components/FormComponentsShowRoom';
 import { ThemeProvider } from './theme';
 import HireMe from './components/HireMe';
+import { HiremeContextProvider } from './store';
 
 const GlobalStyle = createGlobalStyle`
 html{
@@ -16,13 +17,13 @@ html{
 
 export default function App() {
 	return (
-		<>
+		<HiremeContextProvider>
 			<ThemeProvider>
 				<GlobalStyle />
 				{/* <FormComponentShowRoom /> */}
 
 				<HireMe />
 			</ThemeProvider>
-		</>
+		</HiremeContextProvider>
 	);
 }
