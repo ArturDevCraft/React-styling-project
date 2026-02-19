@@ -29,18 +29,17 @@ export default function HireMe() {
 				<StyledColumnWrapper>
 					<StyledColumnWrapper>
 						{skills.map(({ name, level }) => (
-							<>
-								<Slider
-									name={name}
-									size="medium"
-									value={level}
-									min="0"
-									max="10"
-									label={name}
-									thickness="thicker"
-									onChange={(e) => setSkillLevel(name, e.target.value)}
-								/>
-							</>
+							<Slider
+								key={`skills-slider-name-${name}`}
+								name={name}
+								size="medium"
+								value={level}
+								min="0"
+								max="10"
+								label={name}
+								thickness="thicker"
+								onChange={(e) => setSkillLevel(name, e.target.value)}
+							/>
 						))}
 					</StyledColumnWrapper>
 					<Input size="small" placeholder="Skill name">
