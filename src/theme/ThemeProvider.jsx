@@ -9,11 +9,14 @@ export default function ThemeProvider({ children }) {
 	const toggleTheme = () => {
 		const themeIndex = themes.indexOf(currentTheme);
 		const themeNumber = themeIndex < themes.length - 1 ? themeIndex + 1 : 0;
-		setCurrentTheme(themes[themeNumber]);
+		const newTheme = themes[themeNumber];
+		setCurrentTheme(newTheme);
+		return newTheme;
 	};
 
 	const themeWithCallback = {
 		...theme[currentTheme],
+		name: currentTheme,
 		toggleTheme: toggleTheme,
 	};
 
