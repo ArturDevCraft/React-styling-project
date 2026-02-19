@@ -13,6 +13,7 @@ const StyledInput = styled.input`
 	text-overflow: ellipsis;
 	flex: 1;
 	min-width: 0;
+	text-align: center;
 `;
 
 export default StyledInput;
