@@ -1,30 +1,60 @@
-import { useTheme } from 'styled-components';
 import RadioPlayer from '../RadioPlayer';
 import StyledHeader from '../Header.styled';
 import Button from '../Button';
 import Icon from '../Icon';
 import StyledWrapper from '../Wrapper.styled';
 import StyledHorizontalLine from '../HorizontalLine.styled';
+import StyledRowWrapper from '../RowWrapper.styled';
+import StyledColumnWrapper from '../ColumnWrapper.styled';
+import { useContext, useState } from 'react';
+import Header from './Header';
+import Input from '../Input';
+import Slider from '../Slider';
+import { HiremeContext } from '../../store';
 
 export default function HireMe() {
-	const { toggleTheme } = useTheme();
+	const [step, setStep] = useState(1);
+	const { skills, addSkill, setSkillLevel } = useContext(HiremeContext);
+
 	return (
 		<StyledWrapper>
-			<StyledHeader>
-				<RadioPlayer url="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
-				<h2>Hire me! - candidate profile generator</h2>
-				<Button
-					onClick={toggleTheme}
-					size="small"
-					width="0.3"
-					shape="square"
-					tooltip="Toggle page theme"
-					tooltipPosition="left"
-				>
-					<Icon type="brush" />
-				</Button>
-			</StyledHeader>
+			<Header>
+				<span>Progress: Step {step}/3</span>
+			</Header>
 			<StyledHorizontalLine />
+			<StyledRowWrapper $align="left">
+				<StyledColumnWrapper $align="left">
+					<RadioPlayer url="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
+				</StyledColumnWrapper>
+				<StyledColumnWrapper>
+					<StyledRowWrapper>
+						<StyledColumnWrapper>
+							{skills.map(({ name }) => (
+								<p>{name}</p>
+							))}
+						</StyledColumnWrapper>
+						<StyledColumnWrapper>
+							{skills.map(({ name, level }) => (
+								<>
+									<Slider
+										name={name}
+										size="verySmall"
+										width="2"
+										value={level}
+										min="0"
+										max="10"
+										onChange={(e) => setSkillLevel(name, e.target.value)}
+									/>
+									<span>{level}</span>
+								</>
+							))}
+						</StyledColumnWrapper>
+					</StyledRowWrapper>
+					<Input size="small" placeholder="Skill name">
+						{' '}
+					</Input>
+				</StyledColumnWrapper>
+			</StyledRowWrapper>
 		</StyledWrapper>
 	);
 }
