@@ -7,8 +7,14 @@ const variant = {
 		width: '14rem',
 		fontSize: '1.3rem',
 	},
-	medium: { width: '18rem', fontSize: '1.6rem' },
-	big: { width: '22rem', fontSize: '2rem' },
+	medium: { width: '20rem', fontSize: '1.6rem' },
+
+	big: { width: '30rem', fontSize: '2rem' },
+
+	thin: { height: '0.8rem' },
+	thicker: { height: '1.6rem' },
+	thickest: { height: '2.4rem' },
+
 	square: {
 		aspectRatio: '1 / 1',
 		whiteSpace: 'wrap',

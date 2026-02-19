@@ -5,11 +5,12 @@ import Slider from './Slider';
 
 const sliderThumbStyles = `
 		appearance: none;
-		height: 2.95em;
-		width:2.95em;
+		height: 2.95rem;
+		width:2.95rem;
 		border-radius: 0 50% 50% 0;
 		background-color: var(--accent);
-		border: none;`;
+		border: none;
+		${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}`;
 
 const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	align-items: stretch;
@@ -30,12 +31,16 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	background-size: clamp(
 			0%,
 			${({ value, min, max }) => ((value - min) / (max - min)) * 100}%,
-			calc(100% - 2.94em)
+			calc(
+				100% -
+					${({ $thickness }) =>
+						variant?.[$thickness]?.height ?? variant.thicker.height}
+			)
 		)
 		100%;
 	background-repeat: no-repeat;
 	border-radius: 2em;
-	height: 2.95em;
+	height: 100%;
 	width: 100%;
 
 	&::-webkit-slider-thumb {
@@ -80,6 +85,7 @@ const StyledSliderWrapper = styled.div`
 	}
 	${tooltip(variant)}
 	${({ size }) => variant?.[size] ?? variant.medium}
+	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
@@ -102,6 +108,7 @@ const StyledSlider = ({
 	$tooltip,
 	$tooltipPosition,
 	$tooltipSize,
+	$thickness,
 }) => (
 	<StyledSliderWrapper
 		onClick={onClick}
@@ -112,6 +119,7 @@ const StyledSlider = ({
 		$tooltip={$tooltip}
 		$tooltipPosition={$tooltipPosition}
 		$tooltipSize={$tooltipSize}
+		$thickness={$thickness}
 	>
 		<StyledSliderInner
 			onChange={onChange}
