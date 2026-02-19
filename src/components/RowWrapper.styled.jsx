@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledRowWrapper = styled.section`
+const StyledRowWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
