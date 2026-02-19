@@ -5,17 +5,17 @@ const StyledColumnWrapper = styled.div`
 	flex-direction: column;
 	justify-content: flex-start;
 	${(props) =>
-		props?.align === 'right' &&
+		props?.$align === 'right' &&
 		css`
 			align-items: flex-end;
 		`};
 	${(props) =>
-		props?.align === 'left' &&
+		props?.$align === 'left' &&
 		css`
 			align-items: flex-start;
 		`};
 	${(props) =>
-		props?.align === 'center' &&
+		props?.$align === 'center' &&
 		css`
 			align-items: center;
 		`};
