@@ -28,6 +28,7 @@ export default function Icon({ type, variant = 'solid', style }) {
 		brush: 'fa-brush', //solid
 		play: 'fa-play', // solid
 		pause: 'fa-pause', //solid
+		logo: 'fa-address-card', //solid
 	};
 
 	useEffect(() => {
