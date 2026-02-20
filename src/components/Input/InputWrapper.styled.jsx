@@ -25,7 +25,7 @@ const StyledInputWrapper = styled.div`
 	font-weight: 400;
 	margin: 1rem;
 	overflow: hidden;
-	padding: 0.9em 2em;
+	padding: 0.9em 1em;
 	text-overflow: ellipsis;
 	transition:
 		color 0.3s ease,
@@ -64,6 +64,7 @@ const StyledInputWrapper = styled.div`
 	${({ width, size }) =>
 		width &&
 		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
 	/* Styles for radio */
 	${({ type, theme, checked }) =>
 		type === 'radio' &&
