@@ -42,7 +42,7 @@ export default function HireMe() {
 							/>
 						))}
 					</StyledColumnWrapper>
-					<Input size="small" placeholder="Skill name">
+					<Input name="skill-name" size="small" placeholder="Skill name">
 						{' '}
 					</Input>
 				</StyledColumnWrapper>

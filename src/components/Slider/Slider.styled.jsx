@@ -94,6 +94,7 @@ const StyledSliderWrapper = styled.div`
 `;
 
 const StyledSlider = ({
+	id,
 	onClick,
 	onChange,
 	name,
@@ -123,6 +124,7 @@ const StyledSlider = ({
 	>
 		<StyledSliderInner
 			onChange={onChange}
+			id={id}
 			name={name}
 			value={value}
 			min={min}

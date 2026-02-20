@@ -4,6 +4,7 @@ import StyledInputWrapper from './InputWrapper.styled';
 import { useRef } from 'react';
 
 export default function Input({
+
 	children,
 	onClick,
 	onChange,
