@@ -36,7 +36,7 @@ const StyledButton = styled.button`
 	white-space: nowrap;
 	&:hover {
 		color: var(--accent);
-		scale: 1.07;
+		scale: 1.05;
 	}
 	${tooltip(variant)}
 	&:active {
@@ -47,10 +47,14 @@ const StyledButton = styled.button`
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
-		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+		css`
+			width: calc(${variant?.[size]?.width ?? variant.medium.width} * ${width});
+		`}
 
 	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
-	${({ style }) => style}
+	${({ style }) => css`
+		${style}
+	`}
 `;
 
 export default StyledButton;

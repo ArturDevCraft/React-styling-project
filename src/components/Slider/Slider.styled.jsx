@@ -1,16 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import variant from './variants';
 import tooltip from '../../theme/tooltip';
 import Slider from './Slider';
 
-const sliderThumbStyles = `
-		appearance: none;
-		height: 2.95rem;
-		width:2.95rem;
-		border-radius: 0 50% 50% 0;
-		background-color: var(--accent);
-		border: none;
-		${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}`;
+const sliderThumbStyles = css`
+	appearance: none;
+	height: 1em;
+	width: 1em;
+	border-radius: 0 50% 50% 0;
+	background-color: var(--accent);
+	border: none;
+	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
+`;
 
 const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	align-items: stretch;
@@ -31,11 +32,7 @@ const StyledSliderInner = styled.input.attrs({ type: 'range' })`
 	background-size: clamp(
 			0%,
 			${({ value, min, max }) => ((value - min) / (max - min)) * 100}%,
-			calc(
-				100% -
-					${({ $thickness }) =>
-						variant?.[$thickness]?.height ?? variant.thicker.height}
-			)
+			calc(100% - 1em)
 		)
 		100%;
 	background-repeat: no-repeat;
@@ -72,7 +69,7 @@ const StyledSliderWrapper = styled.div`
 	z-index: 0;
 
 	&:hover {
-		scale: 1.1;
+		scale: 1.05;
 		${StyledSliderInner} {
 			background-image: linear-gradient(var(--accentHover), var(--accentHover));
 		}
@@ -89,8 +86,12 @@ const StyledSliderWrapper = styled.div`
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
-		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
-	${({ style }) => style}
+		css`
+			width: calc(${variant?.[size]?.width ?? variant.medium.width} * ${width});
+		`}
+	${({ style }) => css`
+		${style}
+	`}
 `;
 
 const StyledSlider = ({

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import StyledInput from './Input.styled';
 import variant from './variants';
 
@@ -49,80 +49,86 @@ const StyledInputWrapper = styled.div`
 	${({ type, theme }) =>
 		type !== 'radio' &&
 		type !== 'checkbox' &&
-		`
-		&:has(${StyledInput}:focus) {
-			box-shadow: ${theme.shadow?.medium.flat},
-						${theme.shadow?.small.pressed};
-			color: var(--accent);
-			outline: none;
-			scale: 1.2;
-		}
+		css`
+			&:has(${StyledInput}:focus) {
+				box-shadow:
+					${theme.shadow?.medium.flat}, ${theme.shadow?.small.pressed};
+				color: var(--accent);
+				outline: none;
+				scale: 1.05;
+			}
 		`}
 
 	${({ size }) => variant?.[size] ?? variant.medium}
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
-		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+		css`
+			width: calc(${variant?.[size]?.width ?? variant.medium.width} * ${width});
+		`}
 	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
 	/* Styles for radio */
 	${({ type, theme, checked }) =>
 		type === 'radio' &&
-		`
-		width: auto; padding: 0.9em; 
-		box-shadow: ${theme.shadow?.medium.flat};
-		&:has(${StyledInput}:checked){
-			box-shadow: ${theme.shadow?.verySmall.pressed};
-		}
-		${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
-
-		${StyledInput} { 
-		appearance:none;
-		background-color: var(--bg);
-		width: 1em;
-		height:1em;
-		display: grid;
-  		place-content: center;
-  		cursor: pointer;
-		border: 0.2em solid var(--bg);
-		outline: 0.2em solid var(--text);
-		border-radius: 50%;
-			&:checked {
-				background-color: var(--text);
+		css`
+			width: auto;
+			padding: 0.9em;
+			box-shadow: ${theme.shadow?.medium.flat};
+			&:has(${StyledInput}:checked) {
+				box-shadow: ${theme.shadow?.verySmall.pressed};
 			}
-		}
-	`}
+			${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
+
+			${StyledInput} {
+				appearance: none;
+				background-color: var(--bg);
+				width: 1em;
+				height: 1em;
+				display: grid;
+				place-content: center;
+				cursor: pointer;
+				border: 0.2em solid var(--bg);
+				outline: 0.2em solid var(--text);
+				border-radius: 50%;
+				&:checked {
+					background-color: var(--text);
+				}
+			}
+		`}
 /* Styles for checkbox */
 	${({ type, theme, checked }) =>
 		type === 'checkbox' &&
-		`
-		width: auto; padding: 0.9em; 
-		box-shadow: ${theme.shadow?.medium.flat};
-		&:has(${StyledInput}:checked){
-			box-shadow: ${theme.shadow?.verySmall.pressed};
-		}
-		${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
+		css`
+			width: auto;
+			padding: 0.9em;
+			box-shadow: ${theme.shadow?.medium.flat};
+			&:has(${StyledInput}:checked) {
+				box-shadow: ${theme.shadow?.verySmall.pressed};
+			}
+			${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
 
-		${StyledInput} { 
-		appearance:none;
-		background-color: var(--bg);
-		width: 1em;
-		height:1em;
-		display: grid;
-  		place-content: center;
-  		cursor: pointer;
-		border: 0.2em solid var(--bg);
-		outline: 0.2em solid var(--text);
-		border-radius: 10%;
-			&:checked {
-				&::before{
-				content: 'X';
-				font-weight: 600;
+			${StyledInput} {
+				appearance: none;
+				background-color: var(--bg);
+				width: 1em;
+				height: 1em;
+				display: grid;
+				place-content: center;
+				cursor: pointer;
+				border: 0.2em solid var(--bg);
+				outline: 0.2em solid var(--text);
+				border-radius: 10%;
+				&:checked {
+					&::before {
+						content: 'X';
+						font-weight: 600;
+					}
 				}
 			}
-		}
+		`}
+	${({ style }) => css`
+		${style}
 	`}
-	${({ style }) => style}
 `;
 
 export default StyledInputWrapper;
