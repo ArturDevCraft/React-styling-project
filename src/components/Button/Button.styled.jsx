@@ -21,6 +21,9 @@ const StyledButton = styled.button`
 	border: none;
 	color: var(--text);
 	cursor: pointer;
+	display: inline-flex;
+	justify-content: space-evenly;
+	align-items: center;
 	font-weight: 600;
 	margin: 1rem;
 	overflow: hidden;
@@ -45,6 +48,8 @@ const StyledButton = styled.button`
 	${({ width, size }) =>
 		width &&
 		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+
+	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
 	${({ style }) => style}
 `;
 

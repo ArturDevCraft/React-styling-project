@@ -11,6 +11,10 @@ const variant = {
 		lineHeight: 1.8,
 		borderRadius: '20%',
 	},
+	thin: { paddingBlock: '0.2em' },
+	thicker: { paddingBlock: '0.9em' },
+	thickest: { paddingBlock: '1.3em' },
+
 	get round() {
 		return { ...this.square, borderRadius: '50%' };
 	},
