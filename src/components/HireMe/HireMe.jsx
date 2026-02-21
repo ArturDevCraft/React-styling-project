@@ -10,18 +10,22 @@ import Header from './Header';
 import Skills from './Skills';
 import Button from '../Button';
 import Icon from '../Icon';
+import Position from './Position';
 
 export default function HireMe() {
 	const [step, setStep] = useState(1);
+	const maxStep = 3;
 	useEffect(() => {
 		if (step < 1) setStep(1);
-		else if (step > 3) setStep(3);
+		else if (step > maxStep) setStep(maxStep);
 	}, [step]);
 
 	return (
 		<StyledWrapper>
 			<Header>
-				<span>Progress: Step {step}/3</span>
+				<span>
+					Progress: Step {step}/{maxStep}
+				</span>
 			</Header>
 			<StyledHorizontalLine />
 			<StyledRowWrapper $align="left" $rwd={true}>
@@ -30,6 +34,7 @@ export default function HireMe() {
 				</StyledColumnWrapper>
 				<StyledColumnWrapper style={{ flexGrow: 2 }}>
 					{step === 1 && <Skills step={step} />}
+					{step === 2 && <Position step={step} />}
 					<StyledHorizontalLine />
 					<StyledRowWrapper $align="justify">
 						<Button
@@ -45,7 +50,7 @@ export default function HireMe() {
 							type="cta"
 							size="small"
 							onClick={() => setStep(step + 1)}
-							disabled={step === 3}
+							disabled={step === maxStep}
 						>
 							Next step
 							<Icon type="arrowRight" style={{ fontSize: '1.8em' }} />
