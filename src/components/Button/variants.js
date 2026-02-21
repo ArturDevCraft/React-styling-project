@@ -22,6 +22,7 @@ const variant = {
 		padding: '0.5em 1em',
 		cursor: 'pointer',
 		boxShadow: 'none',
+		width: 'fit-content',
 	},
 
 	get round() {
