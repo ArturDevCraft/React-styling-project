@@ -14,6 +14,15 @@ const variant = {
 	thin: { paddingBlock: '0.2em' },
 	thicker: { paddingBlock: '0.9em' },
 	thickest: { paddingBlock: '1.3em' },
+	clear: {
+		backgroundColor: 'transparent',
+		backgroundImage: 'none',
+		border: 'none',
+		color: 'var(--text)',
+		padding: '0.5em 1em',
+		cursor: 'pointer',
+		boxShadow: 'none',
+	},
 
 	get round() {
 		return { ...this.square, borderRadius: '50%' };

@@ -11,6 +11,7 @@ export default function Button({
 	tooltipPosition = 'top',
 	tooltipSize,
 	thickness,
+	type,
 }) {
 	return (
 		<StyledButton
@@ -23,6 +24,7 @@ export default function Button({
 			$tooltipPosition={tooltipPosition}
 			$tooltipSize={tooltipSize}
 			$thickness={thickness}
+			$type={type}
 		>
 			{children}
 		</StyledButton>

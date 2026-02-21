@@ -52,6 +52,11 @@ const StyledButton = styled.button`
 		`}
 
 	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
+	${({ $type }) =>
+		$type === 'clear' &&
+		css`
+			${variant.clear}
+		`}
 	${({ style }) => css`
 		${style}
 	`}
