@@ -68,7 +68,7 @@ function reducer(state, action) {
 				skills: [...state.skills, newSkill],
 			};
 		}
-		case 'DELETE_Skill':
+		case 'DELETE_SKILL':
 			return {
 				...state,
 				skills: state.skills.filter((skill) => skill.name !== action.payload),
