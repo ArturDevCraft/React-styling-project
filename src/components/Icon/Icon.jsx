@@ -30,6 +30,7 @@ export default function Icon({ type, variant = 'solid', style }) {
 		pause: 'fa-pause', //solid
 		logo: 'fa-address-card', //solid
 		radio: 'fa-radio', //solid
+		trash: 'fa-trash-can', //solid, regular
 	};
 
 	useEffect(() => {
