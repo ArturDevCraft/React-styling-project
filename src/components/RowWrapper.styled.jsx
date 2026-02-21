@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 
 const StyledRowWrapper = styled.div`
 	display: flex;
-	flex-direction: column;
-	align-items: center;
 
 	gap: 2rem;
 	${(props) =>
@@ -26,16 +24,19 @@ const StyledRowWrapper = styled.div`
 		css`
 			justify-content: space-between;
 		`};
+	${(props) =>
+		props?.$rwd &&
+		css`
+			flex-direction: column;
+			align-items: center;
+			@media (min-width: 768px) {
+				flex-direction: row;
+				align-items: flex-start;
+			}
+		`};
 	${(props) => css`
 		${props?.style}
 	`}
-	@media (min-width: 768px) {
-		flex-direction: row;
-		align-items: flex-start;
-	}
-
-	@media (min-width: 1024px) {
-	}
 `;
 
 export default StyledRowWrapper;
