@@ -11,16 +11,36 @@ const hireMeInitialState = {
 	},
 	skills: [
 		{
+			name: 'HTML',
+			level: 5,
+		},
+		{
+			name: 'CSS',
+			level: 5,
+		},
+		{
 			name: 'JavaScript',
-			level: 0,
+			level: 5,
 		},
 		{
 			name: 'React',
-			level: 0,
+			level: 5,
 		},
 		{
 			name: 'English',
-			level: 0,
+			level: 5,
+		},
+		{
+			name: 'Teamwork',
+			level: 5,
+		},
+		{
+			name: 'Communication',
+			level: 5,
+		},
+		{
+			name: 'Problem Solving',
+			level: 5,
 		},
 	],
 };
@@ -42,7 +62,7 @@ function getDataFromLocalStorage() {
 function reducer(state, action) {
 	switch (action.type) {
 		case 'ADD_SKILL': {
-			const newSkill = { name: action.payload, level: 0 };
+			const newSkill = { name: action.payload, level: 5 };
 			return {
 				...state,
 				skills: [...state.skills, newSkill],
