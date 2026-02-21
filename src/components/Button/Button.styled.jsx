@@ -63,6 +63,11 @@ const StyledButton = styled.button`
 		css`
 			${variant.cta}
 		`}
+	${({ disabled }) =>
+		disabled &&
+		css`
+			${variant.disabled}
+		`}
 	${({ style }) => css`
 		${style}
 	`}

@@ -12,6 +12,7 @@ export default function Button({
 	tooltipSize,
 	thickness,
 	type,
+	disabled,
 }) {
 	return (
 		<StyledButton
@@ -25,6 +26,7 @@ export default function Button({
 			$tooltipSize={tooltipSize}
 			$thickness={thickness}
 			$type={type}
+			disabled={disabled}
 		>
 			{children}
 		</StyledButton>

@@ -33,6 +33,17 @@ const variant = {
 			color: 'var(--bg)',
 		},
 	},
+	disabled: {
+		backgroundColor: 'var(--shadowDark)',
+		color: 'var(--bg)',
+		cursor: 'not-allowed',
+		boxShadow: 'none',
+		'&:hover': {
+			backgroundColor: 'var(--shadowDark)',
+			color: 'var(--bg)',
+			scale: 1,
+		},
+	},
 
 	get round() {
 		return { ...this.square, borderRadius: '50%' };
