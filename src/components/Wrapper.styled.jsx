@@ -6,7 +6,7 @@ const StyledWrapper = styled.div`
 	padding: 20px;
 	box-sizing: border-box;
 	margin: 0 auto;
-	width: 95%;
+	width: clamp(400px, 95%, 1200px);
 	padding: 20px;
 	--bg: ${({ theme }) => theme.color?.background || '#e6e6e6'};
 	--text: ${({ theme }) => theme.color?.text || '#686868'};
