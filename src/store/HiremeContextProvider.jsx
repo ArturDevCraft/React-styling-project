@@ -3,6 +3,7 @@ import HiremeContext from './HiremeContext';
 
 const hireMeInitialState = {
 	position: {
+		company: '',
 		title: '',
 		description: '',
 		seniority: '',
