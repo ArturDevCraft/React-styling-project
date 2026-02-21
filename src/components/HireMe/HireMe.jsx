@@ -14,7 +14,8 @@ import { HiremeContext } from '../../store';
 
 export default function HireMe() {
 	const [step, setStep] = useState(1);
-	const { skills, addSkill, setSkillLevel } = useContext(HiremeContext);
+	const { skills, addSkill, deleteSkill, setSkillLevel } =
+		useContext(HiremeContext);
 	const [newSkill, setNewSkill] = useState('');
 	const newSkillClickHandler = () => {
 		addSkill(newSkill);
@@ -23,6 +24,17 @@ export default function HireMe() {
 	const addButton = (
 		<Button onClick={newSkillClickHandler} size="small" thickness="thin">
 			Add <Icon type="plus" style={{ fontSize: '1.8em' }} />
+		</Button>
+	);
+
+	const deleteButton = (name) => (
+		<Button
+			key={`deleteButton-${name}`}
+			onClick={() => deleteSkill(name)}
+			type="clear"
+			tooltip="Delete skill"
+		>
+			<Icon type="trash" variant="regular" />
 		</Button>
 	);
 	return (
@@ -37,18 +49,25 @@ export default function HireMe() {
 				</StyledColumnWrapper>
 				<StyledColumnWrapper style={{ flexGrow: 2 }}>
 					<StyledColumnWrapper $align="center">
+						<h3>{step}. Set skill levels</h3>
 						{skills.map(({ name, level }) => (
-							<Slider
-								key={`skills-slider-name-${name}`}
-								name={name}
-								size="medium"
-								value={level}
-								min="0"
-								max="10"
-								label={name}
-								thickness="thicker"
-								onChange={(e) => setSkillLevel(name, e.target.value)}
-							/>
+							<StyledRowWrapper key={`skill-row-${name}`} $align="left">
+								<Slider
+									key={`skills-slider-name-${name}`}
+									name={name}
+									size="medium"
+									value={level}
+									min="0"
+									max="10"
+									label={name}
+									thickness="thicker"
+									tooltip={level}
+									tooltipPosition="top"
+									onChange={(e) => setSkillLevel(name, e.target.value)}
+								>
+									{deleteButton(name)}
+								</Slider>
+							</StyledRowWrapper>
 						))}
 					</StyledColumnWrapper>
 					<StyledColumnWrapper $align="center" style={{ paddingTop: '1.6em' }}>
