@@ -19,6 +19,9 @@ const StyledColumnWrapper = styled.div`
 		css`
 			align-items: center;
 		`};
+	${(props) => css`
+		${props?.style}
+	`}
 `;
 
 export default StyledColumnWrapper;
