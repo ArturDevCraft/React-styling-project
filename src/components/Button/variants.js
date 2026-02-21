@@ -24,6 +24,15 @@ const variant = {
 		boxShadow: 'none',
 		width: 'fit-content',
 	},
+	cta: {
+		backgroundImage: 'none',
+		backgroundColor: 'var(--accent)',
+		color: 'var(--bg)',
+		'&:hover': {
+			backgroundColor: 'var(--accentHover)',
+			color: 'var(--bg)',
+		},
+	},
 
 	get round() {
 		return { ...this.square, borderRadius: '50%' };

@@ -10,6 +10,7 @@ const StyledButton = styled.button`
 	--shadowLight: ${({ theme }) => theme.color?.shadowLight || '#ffffff'};
 	--shadowDark: ${({ theme }) => theme.color?.shadowDark || '#939699'};
 	--accent: ${({ theme }) => theme.color?.accent || '#0088ff'};
+	--accentHover: ${({ theme }) => theme.color?.accentHover || '#0077e0'};
 
 	background-image: linear-gradient(
 		110deg,
@@ -56,6 +57,11 @@ const StyledButton = styled.button`
 		$type === 'clear' &&
 		css`
 			${variant.clear}
+		`}
+	${({ $type }) =>
+		$type === 'cta' &&
+		css`
+			${variant.cta}
 		`}
 	${({ style }) => css`
 		${style}
