@@ -54,11 +54,16 @@ const StyledSelectWrapper = styled.div`
 		color: var(--accent);
 	}
 
-	${({ size }) => variant?.[size] ?? variant.medium}
+	width: 100%;
+	min-width: ${({ size }) => variant?.[size]?.width ?? variant.medium.width};
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
-		`width: calc( ${variant?.[size]?.width ?? variant.medium.width} * ${width}); `}
+		css`
+			min-width: calc(
+				${variant?.[size]?.width ?? variant.medium.width} * ${width}
+			);
+		`}
 	${({ style }) => style}
 `;
 

@@ -12,8 +12,8 @@ const StyledInput = styled.input`
 	resize: none;
 	text-overflow: ellipsis;
 	flex: 1;
-	min-width: 0;
 	text-align: center;
+	width: 100%;
 `;
 
 export default StyledInput;

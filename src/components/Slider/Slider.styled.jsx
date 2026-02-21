@@ -81,13 +81,17 @@ const StyledSliderWrapper = styled.div`
 		}
 	}
 	${tooltip(variant)}
-	${({ size }) => variant?.[size] ?? variant.medium}
 	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
+	${({ shape }) => variant?.[shape]}
+	width: 100%;
+	min-width: ${({ size }) => variant?.[size]?.width ?? variant.medium.width};
 	${({ shape }) => variant?.[shape]}
 	${({ width, size }) =>
 		width &&
 		css`
-			width: calc(${variant?.[size]?.width ?? variant.medium.width} * ${width});
+			min-width: calc(
+				${variant?.[size]?.width ?? variant.medium.width} * ${width}
+			);
 		`}
 	${({ style }) => css`
 		${style}

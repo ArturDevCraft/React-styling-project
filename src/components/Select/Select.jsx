@@ -15,6 +15,7 @@ export default function Select({
 	placeholder,
 	children,
 	label,
+	labelPosition,
 }) {
 	const content = (
 		<StyledSelect
@@ -41,7 +42,7 @@ export default function Select({
 		</StyledSelect>
 	);
 	return label ? (
-		<StyledLabel size={size} htmlFor={name}>
+		<StyledLabel size={size} $labelPosition={labelPosition} htmlFor={name}>
 			{label}
 			{content}
 		</StyledLabel>

@@ -2,21 +2,32 @@ import styled, { css } from 'styled-components';
 import variant from './variants';
 
 const StyledLabel = styled.label`
+	--multiplyWidth: 1.8;
+	${({ $labelPosition }) =>
+		$labelPosition === 'top' &&
+		css`
+			--multiplyWidth: 1;
+		`}
 	font-size: ${({ size }) =>
 		variant?.[size]?.fontSize ?? variant.medium.fontSize};
-	width: calc(
-		${({ size }) => variant?.[size]?.width ?? variant.medium.width} * 1.8
+
+	width: 100%;
+	min-width: calc(
+		${({ size }) => variant?.[size]?.width ?? variant.medium.width} *
+			var(--multiplyWidth)
 	);
 	${({ width, size }) =>
 		width &&
 		css`
-			width: calc(
-				${variant?.[size]?.width ?? variant.medium.width} * 1.8 * ${width}
+			min-width: calc(
+				${variant?.[size]?.width ?? variant.medium.width} *
+					var(--multiplyWidth) * ${width}
 			);
 		`}
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 0.5em;
 	${({ $labelPosition }) =>
 		$labelPosition === 'top' &&
 		css`

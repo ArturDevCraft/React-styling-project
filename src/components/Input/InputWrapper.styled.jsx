@@ -58,13 +58,15 @@ const StyledInputWrapper = styled.div`
 				scale: 1.05;
 			}
 		`}
-
-	${({ size }) => variant?.[size] ?? variant.medium}
 	${({ shape }) => variant?.[shape]}
+	width: 100%;
+	min-width: ${({ size }) => variant?.[size]?.width ?? variant.medium.width};
 	${({ width, size }) =>
 		width &&
 		css`
-			width: calc(${variant?.[size]?.width ?? variant.medium.width} * ${width});
+			min-width: calc(
+				${variant?.[size]?.width ?? variant.medium.width} * ${width}
+			);
 		`}
 	${({ $thickness }) => variant?.[$thickness] ?? variant.thicker}
 	/* Styles for radio */
@@ -79,6 +81,7 @@ const StyledInputWrapper = styled.div`
 			}
 			${checked && `box-shadow: ${theme.shadow?.verySmall.pressed}`};
 
+			min-width: 0;
 			${StyledInput} {
 				appearance: none;
 				background-color: var(--bg);
@@ -100,6 +103,7 @@ const StyledInputWrapper = styled.div`
 		type === 'checkbox' &&
 		css`
 			width: auto;
+			min-width: 0;
 			padding: 0.9em;
 			box-shadow: ${theme.shadow?.medium.flat};
 			&:has(${StyledInput}:checked) {
