@@ -48,12 +48,16 @@ export default function Slider({
 		></StyledSlider>
 	);
 	return label ? (
-		<StyledLabel size={size} width={width} htmlFor={name}>
-			{children} {label} {content}
-		</StyledLabel>
+		<>
+			<StyledLabel size={size} width={width} htmlFor={name}>
+				{label} {content}
+			</StyledLabel>
+			{children}
+		</>
 	) : (
 		<>
-			{children} {content}
+			{content}
+			{children}
 		</>
 	);
 }
