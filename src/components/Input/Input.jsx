@@ -18,6 +18,7 @@ export default function Input({
 	checked,
 	label,
 	thickness,
+	labelPosition,
 }) {
 	const inputRef = useRef(null);
 	const handleClick = () => {
@@ -56,7 +57,12 @@ export default function Input({
 		</StyledInputWrapper>
 	);
 	return label ? (
-		<StyledLabel size={size} width={width} htmlFor={name}>
+		<StyledLabel
+			size={size}
+			width={width}
+			$labelPosition={labelPosition}
+			htmlFor={name}
+		>
 			{type === 'checkbox' || type === 'radio' ? (
 				<>
 					{content}

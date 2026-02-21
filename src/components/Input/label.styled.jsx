@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import variant from './variants';
 
 const StyledLabel = styled.label`
@@ -14,9 +14,16 @@ const StyledLabel = styled.label`
 				${variant?.[size]?.width ?? variant.medium.width} * 1.8 * ${width}
 			);
 		`}
+
 	display: flex;
+
 	justify-content: space-between;
 	align-items: center;
+	${({ $labelPosition }) =>
+		$labelPosition === 'top' &&
+		css`
+			flex-direction: column;
+		`}
 `;
 
 export default StyledLabel;

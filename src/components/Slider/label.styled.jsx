@@ -17,6 +17,11 @@ const StyledLabel = styled.label`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	${({ $labelPosition }) =>
+		$labelPosition === 'top' &&
+		css`
+			flex-direction: column;
+		`}
 `;
 
 export default StyledLabel;

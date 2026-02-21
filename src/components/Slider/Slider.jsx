@@ -20,6 +20,7 @@ export default function Slider({
 	tooltipPosition,
 	tooltipSize,
 	thickness,
+	labelPosition,
 }) {
 	const initialSliderVal = value < min ? min : value;
 	const [sliderVal, setSliderVal] = useState(initialSliderVal);
@@ -49,7 +50,12 @@ export default function Slider({
 	);
 	return label ? (
 		<>
-			<StyledLabel size={size} width={width} htmlFor={name}>
+			<StyledLabel
+				size={size}
+				width={width}
+				$labelPosition={labelPosition}
+				htmlFor={name}
+			>
 				{label} {content}
 			</StyledLabel>
 			{children}
