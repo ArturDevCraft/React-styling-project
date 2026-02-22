@@ -52,11 +52,11 @@ function saveDataInLocalStorage(state) {
 }
 
 function getDataFromLocalStorage() {
-	const string = localStorage.getItem('YourCandidate');
+	const string = localStorage.getItem('HiremeYourCandidate');
 	const data = string ? JSON.parse(string) : null;
 
 	if (data === null) {
-		return {};
+		return hireMeInitialState;
 	}
 	return data;
 }
@@ -106,7 +106,7 @@ function reducer(state, action) {
 }
 
 export default function HiremeContextProvider({ children }) {
-	const [state, dispatch] = useReducer(reducer, hireMeInitialState);
+	const [state, dispatch] = useReducer(reducer, getDataFromLocalStorage());
 	const contextValue = useMemo(
 		() => ({
 			position: state.position,
@@ -129,7 +129,7 @@ export default function HiremeContextProvider({ children }) {
 
 	useEffect(() => {
 		const dataFromStorage = getDataFromLocalStorage();
-		if (dataFromStorage.columns && dataFromStorage.tasks) {
+		if (dataFromStorage.position && dataFromStorage.skills) {
 			dispatch({ type: 'LOAD_DATA', payload: dataFromStorage });
 		}
 	}, []);
