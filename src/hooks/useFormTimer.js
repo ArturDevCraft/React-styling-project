@@ -24,13 +24,15 @@ const useFormTimer = () => {
 
 		const durationMs = Date.now() - startTimeRef.current;
 		const durationSec = parseFloat((durationMs / 1000).toFixed(2));
-
+		const minutes = Math.floor(durationSec / 60);
+		const seconds = Math.floor(durationSec % 60);
+		const durationFormatted = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 		if (resetAfter) {
 			startTimeRef.current = null;
 			saveTimerInLocalStorage(null);
 		}
 
-		return durationSec;
+		return durationFormatted;
 	}, []);
 
 	const resetTimer = useCallback(() => {
@@ -48,11 +50,9 @@ const useFormTimer = () => {
 		}
 
 		const id = setInterval(() => {
-			const durationSec = Math.round(getDuration());
-			const minutes = Math.floor(durationSec / 60);
-			const seconds = Math.floor(durationSec % 60);
-			const durationFormatted = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-			setTime(durationFormatted);
+			const duration = getDuration();
+
+			setTime(duration);
 		}, 1000);
 		intervalId.current = id;
 	};
