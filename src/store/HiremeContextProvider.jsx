@@ -45,6 +45,10 @@ const hireMeInitialState = {
 			level: 5,
 		},
 	],
+	contact: {
+		name: '',
+		email: '',
+	},
 };
 
 function saveDataInLocalStorage(state) {
@@ -100,6 +104,14 @@ function reducer(state, action) {
 				...state,
 				...action.payload,
 			};
+		case 'SET_CONTACT':
+			return {
+				...state,
+				contact: {
+					...state.contact,
+					...action.payload,
+				},
+			};
 		default:
 			return state;
 	}
@@ -111,6 +123,7 @@ export default function HiremeContextProvider({ children }) {
 		() => ({
 			position: state.position,
 			skills: state.skills,
+			contact: state.contact,
 			addSkill: (name) => {
 				dispatch({ type: 'ADD_SKILL', payload: name });
 			},
@@ -123,13 +136,20 @@ export default function HiremeContextProvider({ children }) {
 			setPosition: (positionData) => {
 				dispatch({ type: 'SET_POSITION', payload: positionData });
 			},
+			setContact: (contactData) => {
+				dispatch({ type: 'SET_CONTACT', payload: contactData });
+			},
 		}),
 		[state],
 	);
 
 	useEffect(() => {
 		const dataFromStorage = getDataFromLocalStorage();
-		if (dataFromStorage.position && dataFromStorage.skills) {
+		if (
+			dataFromStorage.position &&
+			dataFromStorage.skills &&
+			dataFromStorage.contact
+		) {
 			dispatch({ type: 'LOAD_DATA', payload: dataFromStorage });
 		}
 	}, []);

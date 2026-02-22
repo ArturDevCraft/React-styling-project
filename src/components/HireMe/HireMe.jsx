@@ -16,13 +16,15 @@ import Summary from './Summary';
 
 export default function HireMe() {
 	const [step, setStep] = useState(1);
+	const [duration, setDuration] = useState(null);
 
-	const { startTimer, resetTimer, time } = useFormTimer();
+	const { startTimer, getDuration, time } = useFormTimer();
 	const maxStep = 3;
 
 	useEffect(() => {
 		if (step < 1) setStep(1);
 		else if (step > maxStep) setStep(maxStep);
+		if (step === 3) setDuration(getDuration(true));
 	}, [step]);
 
 	useEffect(() => {
@@ -45,7 +47,7 @@ export default function HireMe() {
 				<StyledColumnWrapper style={{ flexGrow: 2 }}>
 					{step === 1 && <Skills step={step} />}
 					{step === 2 && <Position step={step} />}
-					{step === 3 && <Summary step={step} />}
+					{step === 3 && <Summary step={step} duration={duration} />}
 					<StyledHorizontalLine />
 					<StyledRowWrapper $align="justify">
 						<Button

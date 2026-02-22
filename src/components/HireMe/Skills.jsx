@@ -12,8 +12,10 @@ export default function Skills({ step }) {
 		useContext(HiremeContext);
 	const [newSkill, setNewSkill] = useState('');
 	const newSkillClickHandler = () => {
-		addSkill(newSkill);
-		setNewSkill('');
+		if (newSkill !== '') {
+			addSkill(newSkill);
+			setNewSkill('');
+		}
 	};
 	const addButton = (
 		<Button onClick={newSkillClickHandler} size="small" thickness="thin">
