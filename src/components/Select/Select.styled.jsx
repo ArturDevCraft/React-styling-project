@@ -11,7 +11,7 @@ const StyledInnerSelect = styled.select`
 	font-weight: inherit;
 	margin: 0;
 	outline: none;
-	padding: 0;
+	padding: 0.9em 2em;
 	resize: none;
 	text-overflow: ellipsis;
 	flex: 1;
@@ -41,7 +41,7 @@ const StyledSelectWrapper = styled.div`
 	font-weight: 400;
 	margin: 1rem;
 	overflow: hidden;
-	padding: 0.9em 2em;
+
 	text-overflow: ellipsis;
 	transition:
 		color 0.3s ease,
