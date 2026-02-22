@@ -12,6 +12,7 @@ import Button from '../Button';
 import Icon from '../Icon';
 import Position from './Position';
 import useFormTimer from '../../hooks/useFormTimer';
+import Summary from './Summary';
 
 export default function HireMe() {
 	const [step, setStep] = useState(1);
@@ -44,6 +45,7 @@ export default function HireMe() {
 				<StyledColumnWrapper style={{ flexGrow: 2 }}>
 					{step === 1 && <Skills step={step} />}
 					{step === 2 && <Position step={step} />}
+					{step === 3 && <Summary step={step} />}
 					<StyledHorizontalLine />
 					<StyledRowWrapper $align="justify">
 						<Button

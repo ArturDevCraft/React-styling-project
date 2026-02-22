@@ -42,7 +42,7 @@ export default function Skills({ step }) {
 							name={name}
 							size="medium"
 							value={level}
-							min="0"
+							min="1"
 							max="10"
 							label={name}
 							thickness="thicker"
