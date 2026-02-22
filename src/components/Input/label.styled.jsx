@@ -35,6 +35,9 @@ const StyledLabel = styled.label`
 		css`
 			min-width: 0;
 			justify-content: flex-start;
+			&:hover {
+				cursor: pointer;
+			}
 		`}
 	${({ $labelPosition }) =>
 		$labelPosition === 'top' &&

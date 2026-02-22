@@ -74,7 +74,7 @@ const StyledInputWrapper = styled.div`
 		type === 'radio' &&
 		css`
 			width: auto;
-			padding: 0.9em;
+			padding: 0.7em;
 			box-shadow: ${theme.shadow?.medium.flat};
 			&:has(${StyledInput}:checked) {
 				box-shadow: ${theme.shadow?.verySmall.pressed};
@@ -85,8 +85,8 @@ const StyledInputWrapper = styled.div`
 			${StyledInput} {
 				appearance: none;
 				background-color: var(--bg);
-				width: 1em;
-				height: 1em;
+				width: 0.9em;
+				height: 0.9em;
 				display: grid;
 				place-content: center;
 				cursor: pointer;
@@ -104,7 +104,7 @@ const StyledInputWrapper = styled.div`
 		css`
 			width: auto;
 			min-width: 0;
-			padding: 0.9em;
+			padding: 0.7em;
 			box-shadow: ${theme.shadow?.medium.flat};
 			&:has(${StyledInput}:checked) {
 				box-shadow: ${theme.shadow?.verySmall.pressed};
@@ -114,8 +114,8 @@ const StyledInputWrapper = styled.div`
 			${StyledInput} {
 				appearance: none;
 				background-color: var(--bg);
-				width: 1em;
-				height: 1em;
+				width: 0.9em;
+				height: 0.9em;
 				display: grid;
 				place-content: center;
 				cursor: pointer;

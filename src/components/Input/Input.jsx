@@ -32,6 +32,9 @@ export default function Input({
 			? 'textarea'
 			: 'input';
 
+	const id =
+		type === 'checkbox' || type === 'radio' ? `${name}-${value}` : name;
+
 	const content = (
 		<StyledInputWrapper
 			size={size}
@@ -47,7 +50,7 @@ export default function Input({
 			<StyledInput
 				ref={inputRef}
 				as={tag}
-				id={name}
+				id={id}
 				name={name}
 				placeholder={placeholder}
 				onChange={onChange}
@@ -57,12 +60,15 @@ export default function Input({
 			/>
 		</StyledInputWrapper>
 	);
+
+	const labelFor =
+		type === 'checkbox' || type === 'radio' ? `${name}-${value}` : name;
 	return label ? (
 		<StyledLabel
 			size={size}
 			width={width}
 			$labelPosition={labelPosition}
-			htmlFor={name}
+			htmlFor={labelFor}
 			type={type}
 		>
 			{type === 'checkbox' || type === 'radio' ? (
