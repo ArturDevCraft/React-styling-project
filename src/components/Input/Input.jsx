@@ -27,7 +27,8 @@ export default function Input({
 	};
 
 	const tag =
-		(type === 'text' || type === undefined) && shape === 'square'
+		(type === 'text' || type === undefined) &&
+		(shape === 'square' || shape === 'rectangle')
 			? 'textarea'
 			: 'input';
 

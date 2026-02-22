@@ -19,8 +19,13 @@ const variant = {
 		aspectRatio: '1 / 1',
 		whiteSpace: 'wrap',
 		lineHeight: 1.5,
-		borderRadius: '20%',
 		padding: '1.3em',
+	},
+	rectangle: {
+		whiteSpace: 'wrap',
+		lineHeight: 1.5,
+		padding: '1.3em',
+		aspectRatio: '4 / 1',
 	},
 	get round() {
 		return { ...this.square, borderRadius: '50%' };
