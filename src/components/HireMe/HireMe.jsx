@@ -11,15 +11,22 @@ import Skills from './Skills';
 import Button from '../Button';
 import Icon from '../Icon';
 import Position from './Position';
+import useFormTimer from '../../hooks/useFormTimer';
 
 export default function HireMe() {
 	const [step, setStep] = useState(1);
+
+	const { startTimer, resetTimer, time } = useFormTimer();
 	const maxStep = 3;
+
 	useEffect(() => {
 		if (step < 1) setStep(1);
 		else if (step > maxStep) setStep(maxStep);
 	}, [step]);
 
+	useEffect(() => {
+		startTimer();
+	}, []);
 	return (
 		<StyledWrapper>
 			<Header>
@@ -29,8 +36,10 @@ export default function HireMe() {
 			</Header>
 			<StyledHorizontalLine />
 			<StyledRowWrapper $align="left" $rwd={true}>
-				<StyledColumnWrapper $align="left">
+				<StyledColumnWrapper $align="center">
 					<RadioPlayer url="https://stream.rcs.revma.com/ye5kghkgcm0uv" />
+
+					<p style={{ fontWeight: 'bold' }}>Time: {time} minutes</p>
 				</StyledColumnWrapper>
 				<StyledColumnWrapper style={{ flexGrow: 2 }}>
 					{step === 1 && <Skills step={step} />}
