@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 
 const StyledRowWrapper = styled.div`
 	display: flex;
-
 	gap: 2rem;
 	${(props) =>
 		props?.$align === 'right' &&
