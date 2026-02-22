@@ -9,6 +9,7 @@ const hireMeInitialState = {
 		seniority: '',
 		contractType: '',
 		workMode: '',
+		mostImportantSkill: '',
 	},
 	skills: [
 		{
@@ -86,6 +87,14 @@ function reducer(state, action) {
 				skills: updatedSkills,
 			};
 		}
+		case 'SET_POSITION':
+			return {
+				...state,
+				position: {
+					...state.position,
+					...action.payload,
+				},
+			};
 		case 'LOAD_DATA':
 			return {
 				...state,
@@ -110,6 +119,9 @@ export default function HiremeContextProvider({ children }) {
 			},
 			setSkillLevel: (name, level) => {
 				dispatch({ type: 'SET_SKILL_LEVEL', payload: { name, level } });
+			},
+			setPosition: (positionData) => {
+				dispatch({ type: 'SET_POSITION', payload: positionData });
 			},
 		}),
 		[state],

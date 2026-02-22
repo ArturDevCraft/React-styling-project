@@ -6,5 +6,6 @@ const HiremeContext = createContext({
 	addSkill: () => {},
 	deleteSkill: () => {},
 	setSkillLevel: () => {},
+	setPosition: () => {},
 });
 export default HiremeContext;

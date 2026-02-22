@@ -15,7 +15,7 @@ export default function Position({ step }) {
 	// 	workMode: '',
 	// },
 
-	const { skills } = useContext(HiremeContext);
+	const { skills, position, setPosition } = useContext(HiremeContext);
 	return (
 		<>
 			<StyledRowWrapper $align="center" $rwd={true}>
@@ -28,6 +28,10 @@ export default function Position({ step }) {
 						labelPosition="top"
 						placeholder="e.g. Google"
 						name="company-name"
+						value={position.company}
+						onChange={(e) =>
+							setPosition({ ...position, company: e.target.value })
+						}
 					/>
 				</StyledColumnWrapper>
 				<StyledColumnWrapper>
@@ -36,6 +40,9 @@ export default function Position({ step }) {
 						labelPosition="top"
 						placeholder="e.g. Frontend Developer"
 						name="position-title"
+						onChange={(e) =>
+							setPosition({ ...position, title: e.target.value })
+						}
 					/>
 				</StyledColumnWrapper>
 			</StyledRowWrapper>
@@ -51,6 +58,10 @@ export default function Position({ step }) {
 							size="medium"
 							name="seniority"
 							type="radio"
+							checked={position.seniority === 'trainee'}
+							onChange={(e) =>
+								setPosition({ ...position, seniority: e.target.value })
+							}
 						/>
 					</StyledColumnWrapper>
 					<StyledColumnWrapper $align="center">
@@ -59,6 +70,10 @@ export default function Position({ step }) {
 							value="junior"
 							size="medium"
 							name="seniority"
+							checked={position.seniority === 'junior'}
+							onChange={(e) =>
+								setPosition({ ...position, seniority: e.target.value })
+							}
 							type="radio"
 						/>
 					</StyledColumnWrapper>
@@ -68,6 +83,10 @@ export default function Position({ step }) {
 							value="mid"
 							size="medium"
 							name="seniority"
+							onChange={(e) =>
+								setPosition({ ...position, seniority: e.target.value })
+							}
+							checked={position.seniority === 'mid'}
 							type="radio"
 						/>
 					</StyledColumnWrapper>
@@ -77,6 +96,10 @@ export default function Position({ step }) {
 							value="senior"
 							size="medium"
 							name="seniority"
+							onChange={(e) =>
+								setPosition({ ...position, seniority: e.target.value })
+							}
+							checked={position.seniority === 'senior'}
 							type="radio"
 						/>
 					</StyledColumnWrapper>
@@ -95,6 +118,10 @@ export default function Position({ step }) {
 								size="medium"
 								name="contract-type"
 								type="radio"
+								onChange={(e) =>
+									setPosition({ ...position, contractType: e.target.value })
+								}
+								checked={position.contractType === 'b2b'}
 							/>
 						</StyledColumnWrapper>
 						<StyledColumnWrapper $align="center">
@@ -104,6 +131,10 @@ export default function Position({ step }) {
 								size="medium"
 								name="contract-type"
 								type="radio"
+								onChange={(e) =>
+									setPosition({ ...position, contractType: e.target.value })
+								}
+								checked={position.contractType === 'mandate'}
 							/>
 						</StyledColumnWrapper>
 						<StyledColumnWrapper $align="center">
@@ -113,6 +144,10 @@ export default function Position({ step }) {
 								size="medium"
 								name="contract-type"
 								type="radio"
+								onChange={(e) =>
+									setPosition({ ...position, contractType: e.target.value })
+								}
+								checked={position.contractType === 'permanent'}
 							/>
 						</StyledColumnWrapper>
 					</StyledColumnWrapper>
@@ -124,6 +159,10 @@ export default function Position({ step }) {
 								size="medium"
 								name="contract-type"
 								type="radio"
+								onChange={(e) =>
+									setPosition({ ...position, contractType: e.target.value })
+								}
+								checked={position.contractType === 'internship'}
 							/>
 						</StyledColumnWrapper>
 						<StyledColumnWrapper $align="center">
@@ -133,6 +172,10 @@ export default function Position({ step }) {
 								size="medium"
 								name="contract-type"
 								type="radio"
+								onChange={(e) =>
+									setPosition({ ...position, contractType: e.target.value })
+								}
+								checked={position.contractType === 'specific-task'}
 							/>
 						</StyledColumnWrapper>
 					</StyledColumnWrapper>
@@ -143,6 +186,11 @@ export default function Position({ step }) {
 					label="Work mode:"
 					labelPosition="top"
 					name="work-mode"
+					placeholder=" -- Select work mode --"
+					onChange={(e) =>
+						setPosition({ ...position, workMode: e.target.value })
+					}
+					value={position.workMode}
 					options={[
 						{ name: 'On-site', value: 'on-site' },
 						{ name: 'Remote', value: 'remote' },
@@ -155,6 +203,10 @@ export default function Position({ step }) {
 					label="Most important skill:"
 					labelPosition="top"
 					name="most-important-skill"
+					value={position.mostImportantSkill}
+					onChange={(e) =>
+						setPosition({ ...position, mostImportantSkill: e.target.value })
+					}
 					placeholder=" -- Select skill --"
 					options={skills}
 				/>
@@ -171,6 +223,10 @@ export default function Position({ step }) {
 					placeholder="Describe the position expectations, requirements, and responsibilities."
 					name="position-description"
 					shape="rectangle"
+					value={position.description}
+					onChange={(e) =>
+						setPosition({ ...position, description: e.target.value })
+					}
 				/>
 			</StyledRowWrapper>
 		</>
