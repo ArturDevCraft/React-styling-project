@@ -63,6 +63,7 @@ export default function Input({
 			width={width}
 			$labelPosition={labelPosition}
 			htmlFor={name}
+			type={type}
 		>
 			{type === 'checkbox' || type === 'radio' ? (
 				<>

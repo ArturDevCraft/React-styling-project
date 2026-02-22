@@ -27,6 +27,7 @@ const StyledRowWrapper = styled.div`
 	${(props) =>
 		props?.$rwd &&
 		css`
+			flex-wrap: wrap;
 			flex-direction: column;
 			align-items: center;
 			@media (min-width: 768px) {

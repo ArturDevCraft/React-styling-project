@@ -30,6 +30,12 @@ const StyledLabel = styled.label`
 	gap: 0.5em;
 	justify-content: space-between;
 	align-items: center;
+	${({ type }) =>
+		(type === 'radio' || type === 'checkbox') &&
+		css`
+			min-width: 0;
+			justify-content: flex-start;
+		`}
 	${({ $labelPosition }) =>
 		$labelPosition === 'top' &&
 		css`
