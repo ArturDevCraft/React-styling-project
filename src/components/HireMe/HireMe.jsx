@@ -30,6 +30,12 @@ export default function HireMe() {
 	useEffect(() => {
 		startTimer();
 	}, []);
+
+	const pages = [
+		<Skills step={step} />,
+		<Position step={step} />,
+		<Summary step={step} duration={duration} />,
+	];
 	return (
 		<StyledWrapper>
 			<Header>
@@ -45,9 +51,7 @@ export default function HireMe() {
 					<p style={{ fontWeight: 'bold' }}>Time: {time} minutes</p>
 				</StyledColumnWrapper>
 				<StyledColumnWrapper style={{ flexGrow: 2 }}>
-					{step === 1 && <Skills step={step} />}
-					{step === 2 && <Position step={step} />}
-					{step === 3 && <Summary step={step} duration={duration} />}
+					{pages[step - 1]}
 					<StyledHorizontalLine />
 					<StyledRowWrapper $align="justify">
 						<Button

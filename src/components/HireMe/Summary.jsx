@@ -19,6 +19,7 @@ import StyledColumnWrapper from '../ColumnWrapper.styled';
 import Button from '../Button';
 import Input from '../Input';
 import StyledRowWrapper from '../RowWrapper.styled';
+import StyledError from './Error.styled';
 
 const mySkills = [
 	{
@@ -60,6 +61,7 @@ export default function Summary({ duration }) {
 	const { position, skills, contact, setContact } = useContext(HiremeContext);
 	const [sending, setSending] = useState(false);
 	const [mailSent, setMailSent] = useState(false);
+	const [errors, setErrors] = useState([]);
 	const data = mySkills.map((mySkill) => {
 		const theirSkill = skills.find((s) => s.name === mySkill.name);
 		const theirSkillVal = theirSkill ? theirSkill.level : 0;
@@ -95,12 +97,21 @@ export default function Summary({ duration }) {
 	};
 
 	const sendButtonHandler = () => {
-		sendEmailJS({
-			name: contact.name,
-			email: contact.email,
-			title: 'HireMe! - Someone is intersted working with you!',
-			phone: '',
-			message: `
+		const errorList = [];
+		if (!contact.email.includes('@')) {
+			errorList.push('Email should contain @');
+		}
+		if (contact.name.trim() == '') {
+			errorList.push('Name is empty');
+		}
+		setErrors(errorList);
+		if (errorList.length === 0)
+			sendEmailJS({
+				name: contact.name,
+				email: contact.email,
+				title: 'HireMe! - Someone is intersted working with you!',
+				phone: '',
+				message: `
                <b>Company name:</b>  ${position.company} <br><br>
                <b>Position:</b>  <br> ${position.title}<br><br>
                <b>Seniority:</b>  <br> ${position.seniority}<br><br>
@@ -120,7 +131,7 @@ export default function Summary({ duration }) {
 									)
 									.join('')}
             `,
-		});
+			});
 	};
 	return (
 		<>
@@ -191,6 +202,10 @@ export default function Summary({ duration }) {
 						onChange={(e) => setContact({ ...contact, email: e.target.value })}
 					/>
 				</StyledRowWrapper>
+				{errors.length > 0 &&
+					errors.map((error, index) => (
+						<StyledError key={`error-${index}`}>{error}</StyledError>
+					))}
 				<Button
 					onClick={sendButtonHandler}
 					type="cta"
