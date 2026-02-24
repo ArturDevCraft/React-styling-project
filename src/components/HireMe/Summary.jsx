@@ -62,13 +62,17 @@ export default function Summary({ duration }) {
 	const [sending, setSending] = useState(false);
 	const [mailSent, setMailSent] = useState(false);
 	const [errors, setErrors] = useState([]);
-	const data = mySkills.map((mySkill) => {
-		const theirSkill = skills.find((s) => s.name === mySkill.name);
-		const theirSkillVal = theirSkill ? theirSkill.level : 0;
-		const matching = (mySkill.level * 100) / theirSkillVal;
+	const data = skills.map((skill) => {
+		const mySkill = mySkills.find(
+			(s) =>
+				s.name.toLowerCase().replace(/\s+/g, '') ===
+				skill.name.toLowerCase().replace(/\s+/g, ''),
+		);
+		const mySkillVal = mySkill ? mySkill.level : 0;
+		const matching = (mySkillVal * 100) / skill.level;
 		const value = matching > 100 ? 100 : matching;
 		return {
-			name: mySkill.name,
+			name: skill.name,
 			value: value,
 		};
 	});
